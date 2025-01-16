@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='indigen',
-    version='0.1.2',
+    version='0.1.3',
     packages=find_packages(include=["indigen", "indigen.*"]),  # Automatically find submodules
     include_package_data=True,
     author="Sudeep Ghate",

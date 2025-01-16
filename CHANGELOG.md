@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.3] - 2025-01-16
+### Fixed
+- Updated `README.md` to include a long description for PyPI.
+
+### Changed
+- Incremented version number to align with updated PyPI release.
+
+## [0.1.2] - 2025-01-15
+### Added
+- Introduced random seed functionality to ensure reproducibility of generated names.
+- Updated state modules with new data and optimized scripts.
+
 ## [0.1.1] - 2025-01-15
 ### Added
 - Introduced random seed functionality to ensure reproducibility of generated names.
