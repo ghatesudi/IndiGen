@@ -12,21 +12,21 @@ def init(user_preference):
     return user_preference
 
 # Function to generate names based on the preference set by `init`
-def generate_karnataka_names(n, user_preference):
+def generate_karnataka_names(n, user_preference=None, seed=None):
     # Karnataka Male First Names
     male_karnataka_firstname = ['Chandra', 'Vishvakarman', 'Udaykumar', 'Narayana', 'Lalith', 'Shashidar', 'Shanmukha', 'Vinayak', 'Indranath',
  'Lalit', 'Vasudevendra', 'Anandesh', 'Satish', 'Devendra', 'Jai', 'Sajjan', 'Manjunatha', 'Anand', 'Venkatraman', 'Charuvendra', 'Ganesh',
-  'Dhruv', 'Anil', 'Arun', 'Anantha', 'Durga', 'Vittal', 'Siddhartha', 'Nandish', 'Maheshwar', 'Gowramma', 'Magesh', 'Kashyap', 'Vidhyadhar',
+  'Dhruv', 'Anil', 'Arun', 'Anantha', 'Durga', 'Vittal', 'Siddhartha', 'Nandish', 'Maheshwar', 'Magesh', 'Kashyap', 'Vidhyadhar',
   'Sadarshan', 'Dheeraj', 'Ashwin', 'Vithal', 'Surendra', 'Jayan', 'Darshan', 'Prashanth', 'Yashwant', 'Rupendra', 'Shivendra', 'Laxminarayana',
   'Tanishq', 'Atmaram', 'Gajanand', 'Harinarayan', 'Madhav', 'Jayanth', 'Nitin', 'Rishikesh', 'Samarth', 'Vaidyanathan', 'Harvinder', 'Krishnamoorthy',
   'Umakanth', 'Vishwanath', 'Narayan', 'Balaram', 'Sanjay', 'Amar', 'Naveen', 'Rudra', 'Jayachandra', 'Raviappa', 'Balaji', 'Ketan', 'Rajashekar', 
   'Bhanuprasad', 'Surajkumar', 'Nikhil', 'Rohan', 'Vishnu', 'Venkappa', 'Eshwar', 'Hemanth', 'Chintan', 'Giridhar', 'Shivakumar', 'Bhaskar', 'Indra', 
-  'Madhusree', 'Shivan', 'Yogendra', 'Aakash', 'Praveen', 'Madhusudhan', 'Kumar', 'Ashok', 'Krishna', 'Vishweshwar', 'Chandru', 'Ajit', 'Vishnuprasad', 
+  'Yogendra', 'Aakash', 'Praveen', 'Madhusudhan', 'Kumar', 'Ashok', 'Krishna', 'Vishweshwar', 'Chandru', 'Ajit', 'Vishnuprasad', 
   'Ilan', 'Tarun', 'Siddhant', 'Lokesh', 'Tejendra', 'Vishvesh', 'Ravi Teja', 'Dineshwaran', 'Sharath', 'Onkar', 'Muktanand', 'Ponnappa', 'Raghunath', 
   'Sreenivasa', 'Vidhath', 'Krishnan', 'Kalyan', 'Tejaswin', 'Ashish', 'Ganeshwar', 'Rajan', 'Yogesh', 'Vijaykumar', 'Chinmayananda', 'Deeraj', 'Uday', 
   'Ajaya', 'Pranesh', 'Kiran', 'Lingaraj', 'Nishanth', 'Nirmal', 'Sanjeev', 'Uttam', 'Raghu', 'Pranay', 'Vishal', 'Nagendra', 'Balakrishna', 'Lohit', 
   'Shrikanth', 'Rajesh', 'Manjunath', 'Mukesh', 'Raghupati', 'Gautam', 'Raman', 'Ajay', 'Kailash', 'Jayakumar', 'Kuppuswamy', 'Kandappa', 'Srinath', 
-  'Surya', 'Aditya', 'Abhaya', 'Vasudevan', 'Ishwaran', 'Sanjiv', 'Vijayraj', 'Chandreshwar', 'Jagannath', 'Pranav', 'Nataraj', 'Chandrashekhar', 'Rathi', 
+  'Surya', 'Aditya', 'Abhay', 'Vasudevan', 'Ishwaran', 'Sanjiv', 'Vijayraj', 'Chandreshwar', 'Jagannath', 'Pranav', 'Nataraj', 'Chandrashekhar', 'Rathi', 
   'Shankar', 'Venkatachalapathy', 'Irfan', 'Kartik', 'Mahender', 'Harsha', 'Badri', 'Kiranraj', 'Narayanesh', 'Suresh', 'Sridhar', 'Sandeep', 'Venkatesh', 
   'Dhananjay', 'Sathish', 'Renju', 'Mithilesh', 'Vishwas', 'Vishwak', 'Krupesh', 'Sarthak', 'Sudarshan', 'Pavan', 'Deepak', 'Chandan', 'Shakthi', 'Tushar', 
   'Vatsal', 'Gajanana', 'Sriram', 'Tarak', 'Dhanvantari', 'Santosh', 'Santhanam', 'Vimlesh', 'Somanna', 'Upendra', 'Muthappa', 'Gagan', 'Rameshwar', 'Vasantha', 
@@ -78,7 +78,7 @@ def generate_karnataka_names(n, user_preference):
                           'Kushalappa', 'Kumar', 'Siddi', 'Nagashetti', 'Chandapur', 'Sunil', 'Vini', 'Kalasapura', 'Kini', 'Tirumakudal', 'Baliga', 'Upadhya', 'Doddamani',
                           'Honnappa', 'Uttur', 'Rao', 'Lakshmanan', 'Singana', 'Tippanna', 'Chikkaballapur', 'Mahale', 'Guledgudda', 'Sool', 'Kelgeri', 'Srinivas',
                           'Panikkar', 'Belavadi', 'Avati', 'Muddebihal', 'Tambe', 'Rajeshwari', 'Ninge', 'Sirdeshpande', 'Vaman', 'Siddhi', 'Shridhar', 'Bhoja', 'Moily',
-                          'Kedilaya', 'Vijayalakshmi', 'Urmil', 'Pal', 'Kodagu', 'Pujari', 'Nandini', 'Tendulkar', 'Nalwadi', 'Dharwad', 'Yamuna', 'Verma', 'Shirahatti', 'Kamadenu',
+                          'Kedilaya', 'Vijayalakshmi', 'Urmil', 'Pal', 'Kodagu', 'Pujari', 'Nandini', 'Tendulkar', 'Nalwadi', 'Dharwad', 'Verma', 'Shirahatti', 'Kamadenu',
                           'Vaidya', 'Somayaji', 'Kodandaram', 'Rajur', 'Yellur', 'Devappa', 'Gudi', 'Doddabettahalli', 'Gundappa', 'Uppar', 'Kurdu', 'Yogaraj', 'Hiremath',
                           'Channarayapatna', 'Achar', 'Laxmeshwar', 'Kurdi', 'Bhatkal', 'Kallur', 'Lakkappa', 'Suvarna', 'Santhosh', 'Vamshi', 'Dasappa', 'Ganiga', 'Kerur',
                           'Kadri', 'Talwar', 'Kadadi', 'Chunchanur', 'Tharwani', 'Hukkeri', 'Doni', 'Sudhakar', 'Baranwal', 'Maddur', 'Cheppudira',  'Vijayakumar', 'Savkur',
@@ -118,7 +118,7 @@ def generate_karnataka_names(n, user_preference):
     "Renuka", "Revathi", "Rishika", "Rishitha", "Rohini", "Roja", "Roopa", "Rukmini", "Rupa", "Rupali", "Sahana", "Sakethika",
     "Sakshi", "Samatha", "Samyuktha", "Sandhya", "Sangeetha", "Sangitha", "Sanika", "Sanjana", "Sapna", "Sarala", "Saraswathi",
     "Saraswati", "Sarika", "Saritha", "Sarvani", "Savitha", "Savithri", "Savitri", "Seema", "Seetha", "Shailaja", "Shalini",
-    "Shankari", "Shanmukha", "Shantha", "Shanthala", "Shanthi", "Sharada", "Sharadhi", "Sharanya", "Sharavathi", "Sharmila",
+    "Shankari", "Shantha", "Shanthala", "Shanthi", "Sharada", "Sharadhi", "Sharanya", "Sharavathi", "Sharmila",
     "Sharvani", "Shashi", "Shashikala", "Shashvathi", "Sheela", "Sheethal", "Shilaka", "Shilpa", "Shivani", "Shobha",
     "Shobhitha", "Shraddha", "Shree", "Shreedevi", "Shreeja", "Shreenidhi", "Shreenika", "Shreevalli", "Shreeya", "Shreya",
     "Shruthi", "Shubha", "Shubhalakshmi", "Shwetha", "Siddhi", "Sindhu", "Sirisha", "Sita", "Smita", "Sneha", "Snehal",
@@ -156,6 +156,13 @@ def generate_karnataka_names(n, user_preference):
 
     # Female suffixes for Karnataka
     female_karnataka_suffix = ["kumari", "amma", "devi","", "", "", "", "", ""]
+
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+    
+    # Initialize user preferences
+    preferences = init(user_preference)
 
     # Generate names using the male and female first names and suffixes
     names = []

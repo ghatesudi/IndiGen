@@ -9,12 +9,11 @@ def init(user_preference=None):
     return user_preference
 
 # uttarpradesh Male and Female First Names and Surnames
-def generate_uttarpradesh_names(n, user_preference=None):
-
+def generate_uttarpradesh_names(n, user_preference=None, seed=None):
     # uttarpradesh Male First name
     uttarpradesh_male_firstname = [
         "Aarav", "Abhay", "Abhishek", "Achyut", "Adarsh", "Aditya", "Agastya", "Ajay", "Akash", "Akhilesh", "Alok", "Amar",
-        "Amarnath", "Ambar", "Amit", "Anand", "Anant", "Anil", "Anirudh", "Ankit", "Ansh", "Anupam", "Arjun", "Arvind",
+        "Amarnath", "Amit", "Anand", "Anant", "Anil", "Anirudh", "Ankit", "Ansh", "Anupam", "Arjun", "Arvind",
         "Ashish", "Ashok", "Atmaram", "Atul", "Avadhesh", "Avinash", "Ayodhya", "Ayush", "Badrinath", "Balram",
         "Bhanu", "Bharat", "Bhaskar", "Bhavesh", "Bhim", "Bhishma", "Bhuvan", "Bikram", "Chandan", "Chandra",
         "Chandrabhanu", "Chandrahas", "Charan", "Darpan", "Darshan", "Daya", "Deepak", "Dev", "Devdutt", "Devendra",
@@ -99,6 +98,10 @@ def generate_uttarpradesh_names(n, user_preference=None):
         "Pande", "Pareek", "Parikh", "Rathore", "Sahni", "Saluja", "Sheoran", "Solanki", "Sood", "Tiwari", "Upasani",
         "Varma", "Vats", "Vishwakarma"]
     
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+
     # Initialize user preferences
     preferences = init(user_preference)
 

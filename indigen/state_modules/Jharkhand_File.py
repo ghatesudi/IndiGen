@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_jharkhand_names(n, user_preference=None):
+def generate_jharkhand_names(n, user_preference=None, seed=None):
 # Jharkhand Male First Names
     jharkhand_male_firstname = [
         'Hathiram', 'Narendra', 'Sharad', 'Arvind', 'Lakshman', 'Hemant', 'Jagannath', 'Lakra', 'Virendra', 'Madan', 'Tejas', 
@@ -51,13 +51,13 @@ def generate_jharkhand_names(n, user_preference=None):
         'Nayantara', 'Karishma', 'Kusum', 'Rasiya', 'Sadhana', 'Shikha', 'Tarini', 'Lalima', 'Rani', 'Ekisha', 'Mishri', 'Koyal', 
         'Harini', 'Ananya', 'Ishita', 'Durga', 'Mina', 'Tripti', 'Tina', 'Sharika', 'Sujata', 'Daku', 'Komal', 'Chandni', 'Nadiya', 
         'Preeti', 'Sakti', 'Deepika', 'Tanvi', 'Dhulma', 'Nirupa', 'Swati', 'Chandini', 'Janta', 'Tilu', 'Shanta', 'Mithila', 'Sachi', 
-        'Babli', 'Adiva', 'Kamli', 'Rangli', 'Palvi', 'Gauri', 'Kanika', 'Kanchan', 'Kajal', 'Nagma', 'Priya', 'Richa', 'Janki', 'Urmi', 
+        'Babli', 'Kamli', 'Rangli', 'Palvi', 'Gauri', 'Kanika', 'Kanchan', 'Kajal', 'Nagma', 'Priya', 'Richa', 'Janki', 'Urmi', 
         'Jeevika', 'Lalitha', 'Daksha', 'Manju', 'Buli', 'Sushmita', 'Rupal', 'Rachna', 'Aanya', 'Risha', 'Diya', 'Jagruti', 'Alka', 'Raghu', 
         'Ankita', 'Jaya', 'Roshni', 'Shweta', 'Yamuna', 'Bhumika', 'Sangeeta', 'Ganga', 'Kohli', 'Jalpa', 'Vimla', 'Sridevi', 'Jaswanti', 
         'Chuni', 'Padmini', 'Anandita', 'Rekha', 'Vasudha', 'Githa', 'Kavya', 'Pavani', 'Jhilik', 'Vaishali', 'Purnima', 'Amrita', 'Somita', 
         'Aradhya', 'Tari', 'Beni', 'Teji', 'Sumita', 'Kamla', 'Saloni', 'Sneha', 'Balkrishna', 'Abha', 'Sampoorna', 'Charulata', 'Arpita', 
         'Shruti', 'Suman', 'Kalpana', 'Hema', 'Vandini', 'Vishakha', 'Sonal', 'Karma', 'Ishwari', 'Bina', 'Vidhi', 'Lalita', 'Nisha', 
-        'Anshu', 'Yamini', 'Shashi', 'Sakshi', 'Tuni', 'Madhura', 'Pragya', 'Pooja', 'Kumari', 'Laxmi', 'Kriti', 'Anita', 'Ritika', 'Vishali', 
+        'Yamini', 'Shashi', 'Sakshi', 'Tuni', 'Madhura', 'Pragya', 'Pooja', 'Kumari', 'Laxmi', 'Kriti', 'Anita', 'Ritika', 'Vishali', 
         'Gargee', 'Sarla', 'Ruchi', 'Anju', 'Anku', 'Vineeta', 'Rakhi', 'Anamika', 'Prachi', 'Kiran', 'Tulika', 'Ravina', 'Yashika', 'Shivani', 
         'Chhaya', 'Shakti', 'Aditi', 'Shalini', 'Nidhi', 'Ekta', 'Narmada', 'Kavita', 'Sanika', 'Devaki', 'Seema', 'Dharini', 'Dalu', 'Sita', 
         'Savita', 'Vandana', 'Murli', 'Sari', 'Pratibha', 'Anjali', 'Juni', 'Harsha', 'Tanya', 'Ashi', 'Dulari', 'Shilpa', 'Dhani', 'Vasanti', 
@@ -83,6 +83,10 @@ def generate_jharkhand_names(n, user_preference=None):
         "Bhoi", "Chaudhary", "Naik", "Barmania", "Rajwar", "Bairagi", "Savant", "Mahapathak", "Siddharth", "Thakur", "Dewri"]
 
     jharkhand_female_suffix = ['', '', '', "devi", "rani", "kumari", '']
+    
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
 
     # Initialize user preferences
     preferences = init(user_preference)

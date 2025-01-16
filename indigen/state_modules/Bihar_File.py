@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_bihar_names(n, user_preference=None):
+def generate_bihar_names(n, user_preference=None, seed=None):
     
     bihari_male_firstname = [
         'Saroj', 'Anirudh', 'Sukesh', 'Bhavesh', 'Bhairav', 'Suman', 'Ashok', 'Tilak', 'Madan', 'Shankar Lal', 'Amarendra', 
@@ -71,7 +71,7 @@ def generate_bihar_names(n, user_preference=None):
     'Jyoti', 'Alpana', 'Vimla', 'Suranitha', 'Poonam', 'Aaradhya', 'Aparna', 'Rubina', 'Architha', 'Shreya', 'Supriya', 
     'Bhanuni', 'Bhumiksha', 'Deeptha', 'Jayanti', 'Shilpa', 'Anju', 'Shikha', 'Hema', 'Radha', 'Arpita', 'Shefali', 
     'Reena', 'Nirupama', 'Parvati', 'Kalpita', 'Damyanti', 'Lavitha', 'Smritha', 'Radhika', 'Tejaswitha', 'Sonia', 
-    'Ganga', 'Shobha', 'Ananta', 'Shubhi', 'Kanak', 'Surabhi', 'Jaishree', 'Balika', 'Mandira', 'Priyanka', 
+    'Ganga', 'Shobha','Shubhi', 'Kanak', 'Surabhi', 'Jaishree', 'Balika', 'Mandira', 'Priyanka', 
     'Rakshitha', 'Laxmi', 'Pallita', 'Rani', 'Dhriti', 'Roopa', 'Rinki', 'Rajni', 'Meenal', 'Kusum', 'Shanta', 
     'Ambika', 'Usha', 'Revati', 'Chanchal', 'Lavita', 'Ranjita', 'Ranjana', 'Priya', 'Malvika', 'Lajwanti', 'Kashish', 
     'Rajlakshmi', 'Madhubala', 'Pushpita', 'Charulata', 'Renu', 'Rekha', 'Sadhna', 'Asmitha', 'Deepal', 'Dushita', 
@@ -82,7 +82,7 @@ def generate_bihar_names(n, user_preference=None):
     'Chitra', 'Babita', 'Pratita', 'Aarti', 'Sumitra', 'Bhawna', 'Bhavana', 'Subhi', 'Harshita', 'Sarita', 
     'Nivedita', 'Arti', 'Richa', 'Sneha', 'Divija', 'Basanti', 'Sadhana', 'Anuja', 'Nalini', 'Prabha', 'Damayanti', 
     'Neha', 'Bindiya', 'Mohini', 'Nirmala', 'Snehal', 'Meenakshi', 'Shashi', 'Mishika', 'Durgeshwari', 'Madhu', 
-    'Reshitha', 'Nilima', 'Rajashree', 'Santhitha', 'Vibhuti', 'Shweta', 'Chandni', 'Prarthana', 'Aparajita', 
+    'Reshitha', 'Nilima', 'Rajashree', 'Santhitha','Shweta', 'Chandni', 'Prarthana', 'Aparajita', 
     'Phoolkumari', 'Gitika', 'Tejaswini', 'Mishrita', 'Roshani', 'Beena', 'Maheshwari', 'Kusumita', 'Taruna', 
     'Dinesha', 'Payal', 'Sakina', 'Devika', 'Chandra', 'Nidhi', 'Ira', 'Garima', 'Phoolmati', 'Indrani', 
     'Akanksha', 'Triveni', 'Kumud', 'Gunjan', 'Anshi', 'Adhira', 'Laxmibai', 'Ramdulari', 'Sudha', 'Sunitha', 
@@ -123,6 +123,10 @@ def generate_bihar_names(n, user_preference=None):
     "Bharti", "Puri", "Sahar", "Rajvanshi", "Dubay", "Mahto", "Mandal", "Rajput", "Narayan", 
     "Raaz", "Saket", "Soni"
     ]
+
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
 
     # Initialize user preferences
     preferences = init(user_preference)

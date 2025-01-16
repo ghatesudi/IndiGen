@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Orissa Male and Female First Names and Surnames
-def generate_orissa_names(n, user_preference=None):
+def generate_orissa_names(n, user_preference=None, seed=None):
 
     # Orissa Male First Names
     odia_male_firstnames= [
@@ -74,7 +74,11 @@ def generate_orissa_names(n, user_preference=None):
         "Patel", "Pati", "Sarnayat", "Madhusmita", "Rathore", "Mohant",
         "Dasarath", "Rai", "Baral"]
     odia_female_suffix= ['', '', '', '', '',"sundari", "priya", "lina", "shree", "devi", "rani", "bharti", "prabha",'', '', '', '', '']
-
+    
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+        
     # Initialize user preferences
     preferences = init(user_preference)
 

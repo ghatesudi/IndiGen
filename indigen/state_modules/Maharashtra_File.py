@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # maharashtra Male and Female First Names and Surnames
-def generate_maharashtra_names(n, user_preference=None):
+def generate_maharashtra_names(n, user_preference=None, seed=None):
     # maharashtra Male First Names
     maharashtra_male_firstname= [
         'Baban', 'Aniruddha', 'Ramesh', 'Nandlal', 'Prajwal', 'Vinayak', 'Bhausaheb', 'Vikram', 'Kamran', 'Anup', 'Nand', 
@@ -57,7 +57,7 @@ def generate_maharashtra_names(n, user_preference=None):
         'Swara', 'Rupa', 'Ishwari', 'Hema', 'Swati', 'Vishaka', 'Esha', 'Priya', 'Disha', 'Gulzar', 'Smita', 'Radhika', 
         'Lajwanti', 'Jeevan', 'Ravi', 'Gaurika', 'Tanuja', 'Anuja', 'Vaidehi', 'Tanvi', 'Kshama', 'Sushita', 'Anita', 
         'Bhumika', 'Bhoomi', 'Vandana', 'Amruta', 'Deepa', 'Priti', 'Ragini', 'Manjiri', 'Garima', 'Nidhi', 'Rajani', 
-        'Yamuna', 'Shubhra', 'Vibhuti', 'Aishwarya', 'Kavita', 'Madhuri', 'Tejaswini', 'Tejal', 'Karuna', 'Aakansha', 
+        'Yamuna', 'Shubhra',  'Aishwarya', 'Kavita', 'Madhuri', 'Tejaswini', 'Tejal', 'Karuna', 'Aakansha', 
         'Shubhangi', 'Rima', 'Yamita', 'Yashasvi', 'Minal', 'Vimala', 'Suman', 'Chandrika', 'Krupa', 'Devika', 'Hemanti', 
         'Brahmi', 'Pooja', 'Chitra', 'Geeta', 'Kumud', 'Anvita', 'Indira', 'Kanchan', 'Ira', 'Nalini', 'Tripti', 'Kiran', 
         'Chhavi', 'Dattika', 'Pradnya', 'Yamini', 'Shital', 'Sharmila', 'Niranjana', 'Kishori', 'Divya', 'Krishna', 
@@ -103,6 +103,11 @@ def generate_maharashtra_names(n, user_preference=None):
         "Tulpule", "Vaidya", "Vijay", "Vishwakarma", "Vishwanath", "Vishwajeet", "Wani", "Wagh", "Zanje", 
         "Zende", "Zalki", "Zarde", "Sarkar", "Sutar", "Patil", "Jadhav", "Jadhaw", "Sawant", "Vaz", "More", 
         "Gajra", "Gadgil", "Kulkarni", "Rao", "Ranade", "Shikare", "Kulkarni", "Kale", "Kumbhar", "Wadkar"]
+    
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+        
         # Initialize user preferences
     preferences = init(user_preference)
     # Create a list to store names and their genders

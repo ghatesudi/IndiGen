@@ -9,13 +9,13 @@ def init(user_preference=None):
     return user_preference
 
 # Himachal Male and Female First Names and Surnames
-def generate_himachal_names(n, user_preference=None):
+def generate_himachal_names(n, user_preference=None, seed=None):
 
     # Himachal Male First Names
     himachal_male_firstnames = [
         'Mohit', 'Lokesh', 'Virendra', 'Vinay', 'Madan', 'Chandra', 'Abhay', 'Rajinder', 'Ashwani', 'Pakanj', 'Nitin', 'Karna', 'Piyush', 
         'Rajesh', 'Pranav', 'Parveen', 'Som', 'Karan', 'Karthik', 'Kishore', 'Atul', 'Jitendra', 'Vijay', 'Sameer', 'Manoj', 'Ajay', 'Uday', 
-        'Harinder', 'Gaurav', 'Padam', 'Gulshan', 'Shashi', 'Sonam', 'Lalit', 'Baldev', 'Paras', 'Abhinav', 'Kushal', 'Ravinder', 'Anup', 'Raman', 
+        'Harinder', 'Gaurav', 'Padam', 'Gulshan', 'Shashi', 'Lalit', 'Baldev', 'Paras', 'Abhinav', 'Kushal', 'Ravinder', 'Anup', 'Raman', 
         'Vikram', 'Karma', 'Amit', 'Gagan', 'Mahesh', 'Vineet', 'Amitabh', 'Baljeet', 'Rajat', 'Harish', 'Saurabh', 'Avinash', 'Surajpal', 
         'Akshit', 'Kunal', 'Pradeep', 'Naresh', 'Kesar', 'Vinod', 'Rajbir', 'Narendra', 'Vivek', 'Sher', 'Dinesh', 'Bhupender', 'Sushil', 'Om', 
         'Pravesh', 'Ankit', 'Yudhveer', 'Kamaldeep', 'Tarun', 'Ramphal', 'Subash', 'Rakesh', 'Dixit', 'Shyam', 'Sunil', 'Raj', 'Ajit', 'Tejinder', 
@@ -64,7 +64,7 @@ def generate_himachal_names(n, user_preference=None):
         'Isha', 'Santosh', 'Tanvi', 'Dolma', 'Pooja', 'Shakti', 'Madhuri', 'Preeti', 'Sushma', 'Sonam', 'Rupali', 'Leela', 'Kanta', 
         'Nidhi', 'Sadhna', 'Sumantha', 'Sarika', 'Radhika', 'Ritu', 'Aruna', 'Simran', 'Kesar', 'Swati', 'Rakhi', 'Babita', 'Rama', 
         'Nisha', 'Kiran', 'Chandra', 'Alka', 'Neha', 'Rachna', 'Divya', 'Payal', 'Deeksha', 'Bindu', 'Savita', 'Anju', 'Jyoti', 'Kusum', 
-        'Yasmin', 'Sonali', 'Bhavika', 'Komal', 'Monika', 'Srishti', 'Palak', 'Asha', 'Nutan', 'Meenal', 'Norbu', 'Shikha', 'Dawa', 'Bimla', 
+        'Yasmin', 'Sonali', 'Bhavika', 'Komal', 'Monika', 'Srishti', 'Palak', 'Asha', 'Nutan', 'Meenal', 'Norbu', 'Shikha', 'Bimla', 
         'Indu', 'Mamta', 'Usha', 'Rukmini', 'Bhavna', 'Rajkumari', 'Sunita', 'Uma', 'Kanika', 'Rekha', 'Nirmala', 'Dimple', 'Tanuja', 'Raksha', 
         'Deepika', 'Prem', 'Anita', 'Sapna', 'Tenzin', 'Aanchal', 'Shalini', 'Pinky', 'Bimala', 'Reena', 'Aishwarya', 'Naina', 'Pallavi', 
         'Sadhana', 'Bharti', 'Ruchi', 'Saroj', 'Sarita', 'Parul', 'Kritika', 'Rajni', 'Riya', 'Praveen', 'Bhawna', 'Seema', 'Shashi', 'Nancy', 
@@ -85,6 +85,10 @@ def generate_himachal_names(n, user_preference=None):
         'Jangid', 'Tenzin', 'Sood', 'Rao', 'Prajapati', 'Solanki', 'Rangar', 'Maharaj', 'Pandit', 'Lama', 'Kachhawa', 'Tomar', 'Bhandari', 'Kadian', 
         'Rajput', 'Rana', 'Bairwa', 'Yunthang', 'Ngawang', 'Chandela', 'Jain', 'Dorje', 'Sikarwar', 'Bumde', 'Yangchen', 'Chokpa', 'Hada']
 
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+    
      # Initialize user preferences
     preferences = init(user_preference)
 

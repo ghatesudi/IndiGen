@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_tribal_names(n, user_preference=None):
+def generate_tribal_names(n, user_preference=None, seed=None):
 
     #Bodo_tribal _names
     bodo_male_names = [
@@ -226,7 +226,7 @@ def generate_tribal_names(n, user_preference=None):
         "Pratap", "Prem", "Raghunath", "Rajendra", "Rajesh", "Ramesh", "Ravi", "Sachin", 
         "Sagar", "Sandeep", "Satish", "Shankar", "Shyam", "Somnath", "Sukhdev", "Sukhlal", 
         "Sundar", "Suraj", "Suresh", "Tarun", "Trilok", "Tulsi", "Uday", "Umesh", "Vijay", 
-        "Vikram", "Vishal", "Vishnu", "Yogesh", "Amba", "Anoop", "Banshi", "Bhairu", 
+        "Vikram", "Vishal", "Vishnu", "Yogesh","Anoop", "Banshi", "Bhairu", 
         "Bharat", "Chokha", "Dalpat", "Deva", "Durga", "Gopal", "Jatan", "Lali", "Madho", 
         "Motilal", "Naru", "Raju", "Sona", "Thakur", "Tokra", "Veer"
     ]
@@ -376,41 +376,77 @@ def generate_tribal_names(n, user_preference=None):
         "Kiyang", "Yang", "Kezang", "Kalang"
     ]
 
+    tribal_names = {
+    "Bhils": {
+        "male_first_names": bhils_male_names,
+        "female_first_names": bhils_female_names,
+        "surnames": bhils_surnames},
+    "Munda": {
+        "male_first_names": munda_male_names,
+        "female_first_names": munda_female_names,
+        "surnames": munda_surnames,
+    },
+	"Bodo":{"male_first_names": bodo_male_names,
+        "female_first_names": bodo_female_names,
+        "surnames": bodo_surnames
+    },
+	"Todo":{"male_first_names": todo_male_names,
+        "female_first_names": todo_female_names,
+        "surnames": todo_surnames
+    },
+	"Koya":{"male_first_names": koya_male_names,
+        "female_first_names": koya_female_names,
+        "surnames": koya_surnames
+    },
+	"Gond":{"male_first_names": gond_male_names,
+        "female_first_names": gond_female_names,
+        "surnames": gond_surnames
+    },
+	"Santhal":{"male_first_names": santhal_male_names,
+        "female_first_names": santhal_female_names,
+        "surnames": santhal_surnames
+    },
+	"khasi":{"male_first_names": khasi_male_names,
+        "female_first_names": khasi_female_names,
+        "surnames": khasi_surnames
+    },
+	"naga":{"male_first_names": naga_male_names,
+        "female_first_names": naga_female_names,
+        "surnames": naga_surnames}}
+
+
     # Initialize user preferences
     preferences = init(user_preference)
 
     # Create a list to store names and their genders
     names = []
+    tribes = list(tribal_names.keys())
+    #n = round(n / 9)
+    print(n)
+    for _ in range(n // 2):  # Generate n/2 male names
+        tribe = random.choice(tribes)
+        tribal_male_names = tribal_names[tribe]["male_first_names"]
+        tribal_surnames = tribal_names[tribe]["surnames"]
 
-    # Generate names for all tribes with surname matching
-    def generate_names(tribal_male_names, tribal_female_names, tribal_surnames):
-        for i in range(n // 2):  # Generate half male and half female names
-            # Male Name Generation
-            first_name_male = random.choice(tribal_male_names)
-            last_name_male = random.choice(tribal_surnames)
-            name_male = first_name_male + " " + last_name_male  # Full name
+        first_name_male = random.choice(tribal_male_names)
+        last_name_male = random.choice(tribal_surnames)
+        name_male = f"{first_name_male} {last_name_male}"
 
-            # Female Name Generation
-            first_name_female = random.choice(tribal_female_names)
-            last_name_female = random.choice(tribal_surnames)
-            name_female = first_name_female + " " + last_name_female  # Full name
+        names.append((name_male, "Male"))
 
-            # Append names with gender information
-            names.append((name_male, "Male"))
-            names.append((name_female, "Female"))
+    # Generate female names
+    for _ in range(n // 2):  # Generate n/2 female names
+        tribe = random.choice(tribes)
+        tribal_female_names = tribal_names[tribe]["female_first_names"]
+        tribal_surnames = tribal_names[tribe]["surnames"]
 
-    # Apply this function to each tribe
-    generate_names(bodo_male_names, bodo_female_names, bodo_surnames)
-    generate_names(todo_male_names, todo_female_names, todo_surnames)
-    generate_names(koya_male_names, koya_female_names, koya_surnames)
-    generate_names(gond_male_names, gond_female_names, gond_surnames)
-    generate_names(santhal_male_names, santhal_female_names, santhal_surnames)
-    generate_names(bhils_male_names, bhils_female_names, bhils_surnames)
-    generate_names(munda_male_names, munda_female_names, munda_surnames)
-    generate_names(khasi_male_names, khasi_female_names, khasi_surnames)
-    generate_names(naga_male_names, naga_female_names, naga_surnames)
+        first_name_female = random.choice(tribal_female_names)
+        last_name_female = random.choice(tribal_surnames)
+        name_female = f"{first_name_female} {last_name_female}"
 
-    # Create a DataFrame
+        names.append((name_female, "Female"))
+
+  # Create a DataFrame
     df = pd.DataFrame(names, columns=["Name", "Gender"])
 
     # Write to CSV file

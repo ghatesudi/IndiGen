@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Punjab Male and Female First Names and Surnames
-def generate_punjab_names(n, user_preference=None):
+def generate_punjab_names(n, user_preference=None, seed=None):
     
     suffix_to_prefixes_male = {"jeet": ["Gur", "Har", "Kul", "Aman", "Amar", "Kanwal", "Charan", "Sharan", "Man", "Sukh", 
         "Karam", "Prabhu", "Gagan", "Sur", "Indar", "Bal", "Simaran", "Sarab", "Ran", "Param", 
@@ -118,21 +118,21 @@ def generate_punjab_names(n, user_preference=None):
 ]
     punjabi_hindu_female_names = [
     "Aanchal", "Aarti", "Aashima", "Abha", "Abhilasha", "Achla", "Ajeeta", "Akriti", "Alaknanda", "Alka",
-    "Amardeep", "Amarjot", "Amolak", "Amrapali", "Amrita", "Amritjeet", "Amritpal", "Anandi", "Anisha", "Anita",
+    "Amardeep", "Amarjot", "Amolak", "Amrapali", "Amrita", "Anandi", "Anisha", "Anita",
     "Anjali", "Anjana", "Anoushka", "Anupama", "Anuradha", "Anushka", "Anvika", "Aradhna", "Archana", "Arpita",
     "Aruna", "Arundhati", "Asha", "Ashmita", "Avantika", "Avneet", "Ayesha", "Ayushmati", "Babita", "Bala",
-    "Baldeep", "Baljeet", "Baljinder", "Balvinder", "Balwant", "Balwantjeet", "Balwinder", "Banita", "Basanti", "Bela",
+    "Baldeep", "Baljeet", "Baljinder", "Balwant", "Balwantjeet", "Balwinder", "Banita", "Basanti", "Bela",
     "Bhagwanti", "Bhagwati", "Bhagyashree", "Bhano", "Bhanupriya", "Bharati", "Bhavani", "Bhavna", "Bholi", "Binita",
     "Binni", "Champa", "Chanchal", "Chandini", "Chandrani", "Chandrapreet", "Charanjit", "Charumati", "Chhavi", "Chitralekha",
     "Damini", "Darshana", "Davinder", "Daya", "Dayawanti", "Dayawati", "Deepika", "Deepinder",
     "Deepmala", "Deepshikha", "Deepti", "Devangana", "Devika", "Devina", "Devinder", "Dhanwanti", "Diksha",
     "Diljeet", "Dipali", "Dolly", "Durga", "Ekta", "Esha", "Gagandeep", "Ganga", "Gauri", "Gayatri",
     "Geeta", "Geetanjali", "Girija", "Gulabo", "Guljeet", "Gulshan", "Gunjan", "Gunjinder", "Gurinder", "Gurleen",
-    "Gurpinder", "Gursharan", "Gurvinder", "Hamsini", "Hansika", "Hardeep", "Harinder", "Harjit",
-    "Harkiran", "Harleen",  "Harminder", "Harpreet", "Harshita", "Harvinder", "Hema", "Hemlata", "Himani",
+    "Gurpinder", "Gursharan", "Gurvinder", "Hamsini", "Hansika", "Harinder", "Harjit",
+    "Harkiran", "Harleen",  "Harminder", "Harpreet", "Harshita", "Hema", "Hemlata", "Himani",
     "Inderjeet", "Indira", "Indu", "Indumati", "Ira", "Ishani", "Ishika", "Ishita", "Ishmeet", "Ishwinder",
     "Jagjit", "Jagrati", "Jamuna", "Janaki", "Janhavi", "Janki", "Jasbir", "Jaskiran", "Jasleen", "Jasmeen",
-    "Jasmeet", "Jaspreet", "Jaswinder", "Jaya", "Jeet", "Jeevan", "Jeevika", "Jhanvi", "Jharna", "Jyoti",
+    "Jasmeet", "Jaspreet", "Jaya", "Jeet", "Jeevan", "Jeevika", "Jhanvi", "Jharna", "Jyoti",
     "Jyotsana", "Jyotsna", "Kalpana", "Kamaljeet", "Kamini", "Kamla", "Kamlesh", "Kanak", "Kanwaljeet",
     "Karamjeet", "Karishma", "Karuna", "Kaveri", "Kavita", "Kavya", "Keerti", "Kiran", "Kirandeep", "Kiranjeet",
     "Kiranjit", "Kiranmayi", "Kiranpal", "Kirpal", "Komal", "Krishma", "Krishnaveni", "Kuldeep", "Kuljeet", "Kusum",
@@ -157,7 +157,7 @@ def generate_punjab_names(n, user_preference=None):
     "Sonika", "Sonu", "Sravani", "Subhashini", "Sudha", "Sugandha", "Sujata", "Sulochana", "Suman", "Sumana",
     "Sumanjeet", "Sunita", "Surinder", "Sushila", "Sushma", "Suvarna", "Swarnalata", "Swarnjeet", "Swati", "Tanisha",
     "Tanvika", "Tara", "Tarandeep", "Tarawati", "Tarini", "Tejinder", "Tripta", "Triveni", "Ujjwala", "Ujwaldeep",
-    "Uma", "Umang", "Upasana", "Upma", "Urmila", "Usha", "Vandana", "Varinder", "Veena", "Vidya",
+    "Uma", "Umang", "Upasana", "Urmila", "Usha", "Vandana", "Varinder", "Veena", "Vidya",
     "Vimal", "Vimala", "Vimla", "Vinita", "Vinodini", "Vishakha", "Yashika", "Yashoda", "Yashpreet", "Yogini",
     "Yogita"]
 
@@ -170,7 +170,10 @@ def generate_punjab_names(n, user_preference=None):
       "Sehgal", "Sehjpal", "Seth", "Sethi", "Sharma", "Singla", "Soni", "Sood", "Suri", "Tuli", "Valecha", "Verma",
       "Dhingra", "Chaddha", "Dhamija", "Bedi", "Arora", "Bhagat", "Duggal", "Goel", "Jindal", "Mittal", "Puri", "Tandon", "Talwar", "Randhwa"]
     
-    
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+        
      # Initialize user preferences
     preferences = init(user_preference)
 

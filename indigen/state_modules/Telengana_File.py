@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_telengana_names(n, user_preference=None):
+def generate_telengana_names(n, user_preference=None, seed=None):
 
     # telengana Male First name
     telengana_male_firstname = [
@@ -38,8 +38,7 @@ def generate_telengana_names(n, user_preference=None):
         "Prabhakar", "Pradeep", "Prakash", "Pramod", "Pranav", "Pratap", "Puranjay", "Radhakrishna", "Raghav", "Raghava", 
         "Raghavendra", "Raghul", "Raghunandan", "Raghunath", "Raghuraman", "Rajamohan", "Rajaramesh", "Rajasekhar", 
         "Rajat", "Rajeev", "Rajendra", "Rajesh", "Rajeshwar", "Rajinder", "Rajinikanth", "Rajiv", "Rajkumar", "Rakeshwar", 
-        "Ramakrishna", "Ramasundaram", "Ramaswamy", "Ramesh", "Rameshwar", "Rameswar", "Ranjan", "Ranjith", "Ravi", "Rekha", 
-        "Renuka", "Rishi", "Rithik", "Rithvik", "Rohan", "Rudra", "Sadananda", "Sagar", "Sahil", "Sai", "Sai Aditya", 
+        "Ramakrishna", "Ramasundaram", "Ramaswamy", "Ramesh", "Rameshwar", "Rameswar", "Ranjan", "Ranjith", "Ravi", "Rishi", "Rithik", "Rithvik", "Rohan", "Rudra", "Sadananda", "Sagar", "Sahil", "Sai", "Sai Aditya", 
         "Sai Ajay", "Sai Ankit", "Sai Ashwin", "Sai Charan", "Sai Hari", "Sai Jayant", "Sai Kiran", "Sai Krishna", 
         "Sai Kumar", "Sai Kumar Rao", "Sai Mahesh", "Sai Manish", "Sai Nikhil", "Sai Prakash", "Sai Pranav", "Sai Raghav", 
         "Sai Ram", "Sai Ramesh", "Sai Sandeep", "Sai Sankar", "Sai Shankar", "Sai Shubham", "Sai Sudarshan", "Sai Sudhir", 
@@ -106,6 +105,11 @@ def generate_telengana_names(n, user_preference=None):
         "Yerramsetti", "Vangalapudi", "Sarveshwar", "Venkataramana", "Sitaram", "Golla", "Acharya", "Shivalingam", 
         "Sundar", "Sahithi", "Palle", "Jaya Lakshmi", "Srihari", "Narsing Rao", "Subbiah", "Macherla", "Vanga", 
         "Tummalapalli", "Zachariah", "Subbareddy"]
+    
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+    
     # Initialize user preferences
     preferences = init(user_preference)
 

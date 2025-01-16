@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_delhi_names(n, user_preference=None):
+def generate_delhi_names(n, user_preference=None, seed=None):
     # delhi Male First name
     delhi_male_firstname = [
         'Tejinder', 'Pankaj', 'Vineet', 'Vikash', 'Atul', 'Mitesh', 'Harinder', 'Harjeet', 'Yogesh', 'Madhav', 'Akshay', 'Raghvendra', 'Darshan', 'Nilesh', 'Sanjiv', 'Puneet',
@@ -53,6 +53,10 @@ def generate_delhi_names(n, user_preference=None):
                  'Chandna', 'Saxena', 'Tandon']
 
     preferences = init(user_preference)
+
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
 
     # Create a list to store names and their genders
     names = []

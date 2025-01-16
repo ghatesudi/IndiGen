@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_bengal_names(n, user_preference=None):
+def generate_bengal_names(n, user_preference=None, seed=None):
 
     # Westbengal Male First Names
     bengali_male_firstname= [
@@ -17,7 +17,7 @@ def generate_bengal_names(n, user_preference=None):
         "Bikram", "Bikas", "Bhabani", "Chandan", "Chandran", "Chirodeep", "Chirantan", "Debabrata", "Debasis", "Dinesh",
         "Dipankar", "Durjoy", "Debojyoti", "Dhiman", "Gautam", "Gourav", "Goutam", "Gokul", "Haran", "Hiran",
         "Hemanta", "Hemendra", "Joydeep", "Jitendra", "Jishu", "Kalyan", "Kamal", "Kartik", "Kunal", "Kishore",
-        "Krishnendu", "Laltu", "Lakshman", "Madhusree", "Manoj", "Mahesh", "Mayukh", "Manish", "Mantu",
+        "Krishnendu", "Laltu", "Lakshman", "Manoj", "Mahesh", "Mayukh", "Manish", "Mantu",
         "Monojit", "Monirul", "Mukul", "Murari", "Nabin", "Narayan", "Nirmal", "Nitesh", "Nikhil", "Niloy",
         "Partha", "Pranab", "Pritam", "Prosenjit", "Pradip", "Parthasarthi", "Probal", "Rajat", "Rakesh", "Ranjan",
         "Ratan", "Rajib", "Rajesh", "Rajiv", "Ramesh", "Riddhiman", "Rishabh", "Robi", "Rudra", "Rupal",
@@ -86,7 +86,12 @@ def generate_bengal_names(n, user_preference=None):
         "Kundu", "Poddar", "Patra", "Ghosh", "Bandyopadhyay", "Naskar", "Das", "Barman", "Sanyal", "Majumder",
         "Pramanik", "Goswami", "Ganguly", "Bhuiyan", "Mukherjee", "Chatterjee", "Mondal", "Dutta", "Chakrabarty",
         "Sanyal", "Ray", "Sen", "Chakraborty", "Saha", "Sarkar", "Ghosal", "Banerjee", "Patel", "Bhuiyan",
-        "Kumar", "Das", "Sarkar", "Sharma", "Singh", "Mitra", "Chowdhury", "Madhusree", "Rath", "Bose"]
+        "Kumar", "Das", "Sarkar", "Sharma", "Singh", "Mitra", "Chowdhury", "Rath", "Bose"]
+ 
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+ 
     # Initialize user preferences
     preferences = init(user_preference)
     # Create a list to store names and their genders

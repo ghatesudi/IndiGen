@@ -9,7 +9,7 @@ def init(user_preference=None):
         return {'name_type': 'full'}  # Default to full name
     return user_preference
 
-def generate_male_names(n, user_preference):
+def generate_male_names(n, user_preference=None, seed=None):
     # Define suffixes and their specific prefixes
     suffix_to_prefixes = {"vihāri": [
             "Rām", "Krisn", "Mukut", "Rās", "Rasik", "Brij", "Syam", "Awadh", 
@@ -249,7 +249,10 @@ def generate_male_names(n, user_preference):
         'Mahanta', 'Doley', 'Chakravarty', 'Bhattacharya', 'Phukan', 'Bishwas', 'Saikia', 
         'Baruah', 'Borthakur'
     ]
-
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+        
     # Initialize user preferences
     preferences = init(user_preference)
 

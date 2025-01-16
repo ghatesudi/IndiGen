@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_tamil_names(n, user_preference=None):
+def generate_tamil_names(n, user_preference=None, seed=None):
 
     # tamil Male First name
     tamil_male_firstname = [
@@ -83,7 +83,7 @@ def generate_tamil_names(n, user_preference=None):
         'Sabarinath', 'Pavina', 'Valli', 'Subadra', 'Indra', 'Maya', 'Sasi', 'Malathi', 'Sivarani', 'Santoshi', 'Aaradhya', 'Swathi', 
         'Shalini', 'Vanathi', 'Shivani', 'Geethika', 'Shanthi', 'Pavani', 'Thavani', 'Vijayalakshmi', 'Rajalakshmii', 'Meenal', 'Uthara', 
         'Lalitha', 'Sudhamani', 'Vishnupriya', 'Ishita', 'Nandita', 'Veda', 'Indrakshi', 'Chandini', 'Gokila', 'Bhuvneshwari', 'Shobha', 
-        'Vishalini', 'Ishwari', 'Balaji', 'Anjalin']
+        'Vishalini', 'Ishwari', 'Anjalin']
     tamil_female_surname = [
         'Vairam', 'Vannammal', 'Madhavi', 'Rukmini', 'Vimaladevi', 'Shanthi', 'Valarmathi', 'Geethashree', 'Kavandhi', 'Vasanthavalli', 
         'Arpudhamani', 'Vijayalaksmi', 'Jothimathi', 'Pavithram', 'Thirupavani', 'Eshwari', 'Sarojini', 'Valliyamma', 'Devapriya', 'Kalyanika', 
@@ -103,6 +103,10 @@ def generate_tamil_names(n, user_preference=None):
         'Vishvakannan', 'Vadamalar', 'Vishnukundala', 'Chidambaram', 'Adivarai', 'Sivaraman', 'Thirumalar', 'Chandhini', 'Srinivasa', 
         'Yamunavalli', 'Srinivasan', 'Geethalakshmi', 'Kavivallal', 'Sivakami', 'Prithivimala', 'Lakshmi', 'Chellarani', 'Vasumathi', 
         'Sithamathi', 'Shyama', 'Yamunammal', 'Rangammal', 'Azhagi', 'Radhika', 'Yasodha', 'Kavitharaj', 'Arangammal', 'Malarvani']
+
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
 
         # Initialize user preferences
     preferences = init(user_preference)

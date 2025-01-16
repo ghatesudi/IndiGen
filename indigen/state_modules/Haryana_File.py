@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # haryana Male and Female First Names and Surnames
-def generate_haryana_names(n, user_preference=None):
+def generate_haryana_names(n, user_preference=None, seed=None):
     haryana_male_firstnames = [
         "Amit", "Rakesh", "Suresh", "Sunil", "Rajesh", "Mahesh", "Ravinder", "Joginder", "Satish", "Ramesh",
         "Sandeep", "Pardeep", "Virender", "Karan", "Vikram", "Deepak", "Anil", "Narender", "Rohit", "Kuldeep",
@@ -30,17 +30,17 @@ def generate_haryana_names(n, user_preference=None):
         "Somesh", "Tarun", "Yatindra","Ashok", "Bharat", "Chetan", "Deenbandhu", "Eklavya", "Gajanan", "Hariprasad", "Jagannath", 
         "Kamal", "Loknath", "Madhukar", "Niraj", "Om", "Prabhakar", "Ravishankar", "Satish", "Shivam", 
         "Sukhdev", "Upendra", "Yashwant","Akhil", "Bhavesh", "Charan", "Dev", "Gopal", "Harendra", "Jaideep", "Kartikeya", "Madhav", 
-        "Navin", "Nitin", "Rohit", "Shivraj", "Surendra", "Tejinder", "Umesh", "Vardhan", "Vimal", 
+        "Navin", "Nitin", "Rohit", "Shivraj", "Surendra", "Umesh", "Vardhan", "Vimal", 
         "Yuvraj", "Zorawar","Amritpal", "Balraj", "Charanjit", "Daljit", "Gurdeep", "Harjinder", "Inderjeet", "Joginder", 
         "Karamjit", "Manjeet", "Nirmal", "Parminder", "Rajveer", "Ranvir", "Sarbjit", "Surjit", 
-        "Tejinder", "Upkar", "Varinder", "Yadvinder","Arshdeep", "Bhupinder", "Dilpreet", "Gurjot", "Harpreet", "Inderjit", "Jaspreet", "Kamaljeet", 
+        "Upkar", "Varinder", "Yadvinder","Arshdeep", "Bhupinder", "Dilpreet", "Gurjot", "Harpreet", "Inderjit", "Jaspreet", "Kamaljeet", 
         "Manpreet", "Nirbhay", "Prabhjot", "Ravinder", "Sandeep", "Simranjit", "Taranjit", "Udaybir", 
         "Vikramjit", "Yashpreet", "Zorawar", "Himmat","Amardeep", "Bhupinder", "Charanjit", "Darshan", "Gurdas", "Harmeet", "Indrajit", "Jagdish", 
         "Kuldeep", "Maninder", "Nirmaljit", "Parminder", "Rajbir", "Ravinder", "Sarbjit", "Tejinder", 
         "Upender", "Vijender", "Yadwinder", "Zorawar"
     ]
     haryana_male_surnames = [
-        'Singh', "Yadav", "Malik", "Dahiya", "Hooda", "Sangwan", "Chauhan", "Sheoran", "Dalal", "Rathi", "Punia",
+        'Singh', "Yadav", "Malik", "Dahiya", "Hooda", "Sangwan", "Chauhan", "Sheoran", "Rathi", "Punia",
         "Deswal", "Dhankar", "Ahlawat", "Rana", "Beniwal", "Sihag", "Sehrawat","Phogat","Khatri", "Gulia", "Kundu", "Jakhar",
         "Sindhu", "Tanwar","Lamba", "Balyan", "Pundir", "Goyat", "Mor","Kashyap", "Sharma", "Kaushik", "Tewatia", "Nehra",
         "Chaudhary", "Rathi", "Pundir", "Kadian", "Sihag", "Dahiya", "Ahlawat",
@@ -94,17 +94,17 @@ def generate_haryana_names(n, user_preference=None):
         "Sushma", "Amritpal", "Charanjit", "Daljeet", "Harpreet", "Jasleen", "Karamjit", "Mandeep", "Navdeep", 
         "Parminder", "Ravinder", "Simranjeet", "Sukhpreet", "Tejinder", "Upkar", "Varinder", "Yoginder", 
         "Zorawar", "Harman", "Bikramjit", "Inderjeet","Amarjit", "Charanjit", "Daljeet", "Harjit", "Jatinder", "Karamjit", "Mandeep", "Navneet", 
-        "Prabhjot", "Rajpreet", "Simran", "Surinder", "Tejinder", "Varinder", "Zorawar", "Harman", 
-        "Vikramjit", "Yuvraj", "Jaspreet", "Parminder","Amrit", "Charanjit", "Daljit", "Harjeet", "Inderjit", "Jasvinder", "Kuldeep", "Mandeep", 
-        "Parminder", "Ravinder", "Simranjeet", "Surjit", "Tejinder", "Upkar", "Vikram", "Yadwinder", 
-        "Aman", "Jagdeep", "Narinder", "Satinder"]
+        "Prabhjot", "Rajpreet", "Simran", "Harman", 
+        "Jaspreet", "Parminder","Amrit", "Charanjit", "Daljit", "Harjeet", "Inderjit", "Jasvinder", "Kuldeep", "Mandeep", 
+        "Parminder", "Ravinder", "Simranjeet", 
+        "Aman", "Jagdeep", "Narinder"]
 
 
     haryana_female_surnames = [
         'Kaur', 'Devi', 'Rani', 'Kumari', 'Chawla', 'Choudhary','Sharma',
         "Yadav", "Malik", "Dahiya", "Hooda", "Sangwan", "Chauhan", "Sheoran", "Dalal", "Rathi", "Punia",
         "Deswal", "Dhankar", "Ahlawat", "Rana", "Beniwal", "Sihag", "Sehrawat", "Bura",
-        "Phogat", "Tanwar",  "Chhillar", "Bainsla", "Jangra", "Sangwan", "Dalal", "Rana", "Nangia", "Lather", "Tanwar", 
+        "Phogat", "Tanwar",  "Chhillar", "Bainsla", "Jangra", "Sangwan", "Rana", "Nangia", "Lather", "Tanwar", 
         "Sheoran", "Kadian","Sharma", "Pandey", "Tiwari", "Chaturvedi", "Dubey", "Bhatt", "Vyas", "Joshi", "Saraswat", 
         "Pathak", "Awasthi", "Bhatnagar", "Upadhyay", "Misra", "Rastogi", "Pratap", "Purohit", 
         "Vishwakarma", "Tripathi","Agarwal", "Oswal", "Khandelwal", "Seth", "Goel", "Mittal", "Garg", "Bansal", "Chawla", 
@@ -127,6 +127,10 @@ def generate_haryana_names(n, user_preference=None):
         "Gupta", "Chawla", "Mahajan", "Gulati", "Aggarwal", "Taneja", "Arora", "Bansal", "Kalra", 
         "Tiwari", "Khera"
     ]
+
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
 
     # Initialize user preferences
     preferences = init(user_preference)

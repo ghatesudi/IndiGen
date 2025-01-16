@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Gujarat Male and Female First Names and Surnames
-def generate_gujrat_names(n, user_preference=None):
+def generate_gujrat_names(n, user_preference=None, seed=None):
     # gurjat Male First Names
     gujrati_male_firstname = [
         'Ajit', 'Veerendra', 'Ashwin', 'Aaditya', 'Rajesh', 'Kailashnath', 'Rudra', 'Raghuraj', 'Lakshman', 'Shatrughna', 'Kundan', 'Ramakant', 'Narendra',
@@ -152,7 +152,11 @@ def generate_gujrat_names(n, user_preference=None):
 
 
     gujrati_female_suffix= ["bha", "ben", "bhen"]
-
+    
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+    
     # Initialize user preferences
     preferences = init(user_preference)
 

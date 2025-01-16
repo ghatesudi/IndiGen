@@ -9,7 +9,7 @@ def init(user_preference=None):
         return {'name_type': 'full'}  # Default to full name
     return user_preference
 
-def generate_goa_names(n, user_preference=None):
+def generate_goa_names(n, user_preference=None, seed=None):
     # Goa Hindu Male First Names
     goa_hindu_male_firstnames = [
         "Aaditya", "Abhay", "Abhishek", "Achyut", "Adarsh", "Advait", "Ajesh", "Ajit",
@@ -62,7 +62,7 @@ def generate_goa_names(n, user_preference=None):
         "Trupti", "Uma", "Urmila", "Urvi", "Usha", "Vaidehi", "Vaishnavi", "Vandana", "Vandita", "Vanshika",
         "Varsha", "Vedika", "Veena", "Vidya", "Vinita", "Vrinda", "Yami", "Yamini", "Yashoda", "Yojana",
         "Lakshmi", "Parvati", "Sita", "Devi", "Meenakshi", "Annapurna", "Mahalakshmi", "Chamundeshwari",
-        "Shivani", "Mahadevi", "Ambika", "Janaki", "Padmavati", "Nandini", "Anusuya", "Shakti", "Ananta",
+        "Shivani", "Mahadevi", "Ambika", "Janaki", "Padmavati", "Nandini", "Anusuya", "Shakti", 
         "Kalyani", "Tarini", "Shyama", "Indrani", "Sundari", "Bhairavi", "Kaveri", "Tulasi", "Mohini",
         "Mrinalini", "Amba", "Jagadamba", "Manjula", "Savitri", "Padma", "Ganga", "Sulochana"
     ]
@@ -108,7 +108,7 @@ def generate_goa_names(n, user_preference=None):
     goa_christian_female_names = [
         "Abigail", "Agatha", "Agnes", "Agnes", "Albeena", "Albina", "Alice", "Alice", "Alina",
         "Alysia", "Amanda", "Amelia", "Andrea", "Angel", "Angela", "Angelina", "Anita", "Anitha",
-        "Ann", "Ann", "Anna", "Annette", "Asha", "Ashel", "Ashley", "Audrey", "Augustine", "Barbara",
+        "Ann", "Ann", "Anna", "Annette", "Asha", "Ashel", "Ashley", "Audrey", "Barbara",
         "Beatrice", "Beatrice", "Benedicta", "Bernadette", "Beryl", "Bethany", "Blossom", "Brenda",
         "Bridget", "Candice", "Carmel", "Carmelita", "Carmina", "Carmine", "Caroline", "Cassandra",
         "Catherine", "Catherine", "Cecilia", "Cecilia", "Celestine", "Celia", "Charity", "Cheryl",
@@ -140,6 +140,11 @@ def generate_goa_names(n, user_preference=None):
         "Theodora", "Theresa", "Tresa", "Valencia", "Venessa", "Veronica", "Veronica", "Vinolia", "Viola", "Viola",
         "Voilet", "Zelda"
     ]
+    
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+
     # Initialize user preferences
     preferences = init(user_preference)
 

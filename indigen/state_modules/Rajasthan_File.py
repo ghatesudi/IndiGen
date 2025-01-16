@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_rajasthan_names(n, user_preference=None):
+def generate_rajasthan_names(n, user_preference=None, seed=None):
     # Rajasthan Male First Names
     rajasthani_male_firstname_hindu = [
         'Ajit', 'Veerendra', 'Ashwin', 'Aaditya', 'Rajesh', 'Kailashnath', 'Rudra', 'Raghuraj', 'Lakshman', 'Shatrughna', 'Kundan', 'Ramakant', 'Narendra',
@@ -102,7 +102,7 @@ def generate_rajasthan_names(n, user_preference=None):
     rajasthani_female_firstname_muslim = [
         "Ayesha", "Fatima", "Khadija", "Zainab", "Sana", "Mariyam", "Amna", "Rabia", "Tasneem", "Fariha", 
         "Amina", "Noor", "Sadaf", "Lubna", "Shazia", "Areeba", "Bushra", "Zara", "Kausar", "Mehwish", 
-        "Asma", "Nazia", "Sadia", "Samina", "Huma", "Nazish", "Saira", "Shamim", "Nabila", "Razia",
+        "Asma", "Nazia", "Sadia", "Samina", "Huma", "Nazish", "Saira", "Nabila", "Razia",
         "Afreen", "Rukhsar", "Bushra", "Jameela", "Sana", "Fariha", "Nigar", "Shahnaz", "Nazrana",'Huma'
     ]
     rajasthani_female_surname_muslim = [
@@ -117,7 +117,10 @@ def generate_rajasthan_names(n, user_preference=None):
         'male': {'hindu': 70, 'muslim': 30},
         'female': {'hindu': 70, 'muslim': 30}
     }
-
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+        
     # Initialize user preferences
     preferences = init(user_preference)
 

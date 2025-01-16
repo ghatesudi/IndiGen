@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_kerala_names(n, user_preference=None):
+def generate_kerala_names(n, user_preference=None, seed=None):
     # Kerala Male First Names
     malyali_male_firstname_hindu = [
         "Achuthan", "Aditya", 'Anup', 'Ajaneesh', 'Nijil', "Ajeesh", "Ajith", "Aravind", "Arjun", "Balakrishnan", "Binu", "Chandran", "Gokul",
@@ -73,7 +73,7 @@ def generate_kerala_names(n, user_preference=None):
         'Vishalini', 'Vidhyashree', 'Manasa', 'Manju', 'Jaya', 'Bhuvana', 'Leena', 'Aalini', 'Vasavi', 'Aswathi', 'Sreevani',
         'Shanvika', 'Shanthini', 'Leela', 'Yamuna', 'Tulasi', 'Rajalakshmi', 'Sakshi', 'Siri', 'Janaki', 'Nandini', 'Anitha',
         'Anjali', 'Aadya', 'Padmavathi', 'Sanya', 'Malavika', 'Aadhya', 'Kiran', 'Keerti', 'Arpita', 'Rani', 'Nithya', 'Hamsa',
-        'Ravika', 'Kalyani', 'Kavitha', 'Achyuta', 'Suma', 'Shashi', 'Kripa', 'Hema', 'Aanjali', 'Shakthi', 'Nisha', 'Rithika',
+        'Ravika', 'Kalyani', 'Kavitha', 'Suma', 'Shashi', 'Kripa', 'Hema', 'Aanjali', 'Shakthi', 'Nisha', 'Rithika',
         'Indira', 'Pranathi', 'Vinitha', 'Shalini', 'Kiranmayi', 'Arathi', 'Parvathi', 'Karunya', 'Dhanalakshmi', 'Vishnupriya',
         'Deepti', 'Shilpa', 'Kalpana', 'Shrini', 'Riya', 'Vijaya', 'Sreelekshmi', 'Anagha', 'Nayana', 'Swara', 'Saranya', 'Bhadra']
 
@@ -129,13 +129,13 @@ def generate_kerala_names(n, user_preference=None):
             'Lailah', 'Shahida', 'Jameela', 'Zohra', 'Jasmine', 'Marwa', 'Maliha', 'Jabira', 'Najma', 'Aabida', 'Aisha', 'Ishraq', 
             'Maheen', 'Shazia', 'Sibah', 'Misha', 'Haneen', 'Arwa', 'Aysha', 'Areeba', 'Rida', 'Laila', 'Hawra', 'Shamima', 'Iqra', 
             'Fareeha', 'Shaista', 'Aila', 'Sundus', 'Nabila', 'Bilqis', 'Shaila', 'Raghda', 'Raniya', 'Simi', 'Zaynab', 'Rabiya', 
-            'Fiza', 'Rabia', 'Amal', 'Sakina', 'Zahira', 'Shania', 'Sahar', 'Uzma', 'Gulsher', 'Ameera', 'Liya', 'Mariam', 'Muneera', 
+            'Fiza', 'Rabia', 'Sakina', 'Zahira', 'Shania', 'Sahar', 'Uzma', 'Gulsher', 'Ameera', 'Liya', 'Mariam', 'Muneera', 
             'Noor', 'Tasneem', 'Hamida', 'Ruqiah', 'Nashwa', 'Anjum', 'Anum', 'Madiha', 'Dina', 'Jumana', 'Ummul', 'Shaheena', 'Wafa', 
             'Nida', 'Raheel', 'Eman', 'Zainab', 'Poonam', 'Basma', 'Feroze', 'Fairooza', 'Sumaiya', 'Kamilah', 'Mirah', 'Kausar', 'Sobia', 
             'Fariha', 'Inas', 'Ruqayya', 'Mekka', 'Asma', 'Shanaz', 'Alima', 'Suma', 'Khatijah', 'Khadeeja', 'Sara', 'Ghazala', 'Nigha', 'Haya', 
             'Fathima', 'Mariya', 'Badriya', 'Haseena', 'Inaya', 'Sumaira', 'Rania', 'Afsana', 'Maisha', 'Nafisa', 'Tariqa', 'Jamila', 'Sima', 
             'Zara', 'Hafsa', 'Shayma', 'Aziza', 'Warda', 'Ghina', 'Abla', 'Ayesha', 'Farah', 'Zoya', 'Raheela', 'Tahira', 'Lana', 'Sadaf', 
-            'Basmah', 'Kawthar', 'Aafiya', 'Ghadir', 'Dalal', 'Shaheen', 'Leena', 'Raheema', 'Afra', 'Rasha', 'Huda', 'Aleena', 'Anisa', 'Hina', 
+            'Basmah', 'Kawthar', 'Aafiya', 'Leena', 'Raheema', 'Afra', 'Rasha', 'Huda', 'Aleena', 'Anisa', 'Hina', 
             'Maha', 'Sajida', 'Jazmin', 'Rashida', 'Sanaa', 'Kamar', 'Syeda', 'Fatimah', 'Fatima', 'Maimuna', 'Fareeda', 'Ainul', 'Hanan', 
             'Muna', 'Asiya', 'Sana', 'Sufiya', 'Gulzar', 'Maheerah', 'Shireen', 'Zeenat', 'Rehama', 'Khadija', 'Ameerah', 'Meher', 'Nisreen', 
             'Sadia', 'Shatha', 'Khalida', 'Shanaya', 'Rima', 'Azra', 'Bushra', 'Alia', 'Raihana', 'Yasmin', 'Siti', 'Aminah', 'Lina', 'Asfiya', 
@@ -207,7 +207,7 @@ def generate_kerala_names(n, user_preference=None):
         'Zachary', 'Sylvester', 'Rey', 'Vince', 'Ephraim', 'Binu', 'Jarvis', 'Biju', 'Ferdinand', 'Joseph', 'Pravin', 'Mithun',
         'Roy', 'Roshan', 'Jojy', 'Sidharth', 'Vikash', 'Nelson', 'Jayson', 'Jacob', 'Jorge', 'Vino', 'Samson', 'Benedict', 'Rohan',
         'Michael', 'Neeraj', 'Aswin', 'Wilson', 'Lazarus', 'Clyde', 'Gerald', 'Vimal', 'Ajesh', 'Basil', 'Glen', 'Vincent', 'Vyas',
-        'Alphonse', 'Shan', 'Lancelot', 'Davis', 'Matthew', 'Isaac', 'reji','Leo','babu','bobby','boby','vinod','ashvil','roshan',
+        'Shan', 'Lancelot', 'Davis', 'Matthew', 'Isaac', 'reji','Leo','babu','bobby','boby','vinod','ashvil','roshan',
         'jibin','jebin' 'zubin','georgekutty','shaji','jai','benny','saji','biju','markose','nixon','rixon','rinto','robin','libin',
         'linto','jerry','tom','tomson','joy','prince','rajan','Alexander','sajin','sachin','jomon','johnny','nelvin','melbin','Shijo','arthur','martin',
         'sam','ajay','abel','faein',
@@ -218,6 +218,10 @@ def generate_kerala_names(n, user_preference=None):
         'male': {'hindu': 40, 'muslim': 40, 'christian': 20},
         'female': {'hindu': 40, 'muslim': 40, 'christian': 20}
     }
+
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
 
     # Initialize user preferences
     preferences = init(user_preference)

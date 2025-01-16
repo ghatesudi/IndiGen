@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_chattisgarh_names(n, user_preference=None):
+def generate_chattisgarh_names(n, user_preference=None, seed=None):
 
     # chattisgarh Male First Names
     chhattisgarh_male_firstname= [
@@ -99,7 +99,11 @@ def generate_chattisgarh_names(n, user_preference=None):
         "kumari", "amma", "devi", " ", " ", " ", " ", " "]
 
 
-# Initialize user preferences
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+
+    # Initialize user preferences
     preferences = init(user_preference)
 
     # Create a list to store names and their genders

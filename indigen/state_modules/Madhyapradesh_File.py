@@ -9,7 +9,7 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_madhyapradesh_names(n, user_preference=None):# madhyapradesh Male First name
+def generate_madhyapradesh_names(n, user_preference=None, seed=None):# madhyapradesh Male First name
 
 
     # madhyapradesh Male First name
@@ -61,14 +61,14 @@ def generate_madhyapradesh_names(n, user_preference=None):# madhyapradesh Male F
         'Shashi', 'Bhavana', 'Ankita', 'Riya', 'Shubhechha', 'Anjali', 'Kumari', 'Indira', 'Yashvi', 'Nutan', 'Gopika', 'Ravina', 'Kamini', 
         'Vimala', 'Namrata', 'Sejal', 'Aarti', 'Sadhana', 'Rupa', 'Nivriti', 'Poonam', 'Manika', 'Durvani', 'Apsara', 'Ravita', 'Aruna', 
         'Manorama', 'Veena', 'Sumi', 'Kalyani', 'Arpita', 'Chandrika', 'Snehal', 'Harsha', 'Amita', 'Usha', 'Prabhavati', 'Shreya', 'Rachna', 
-        'Sakshi', 'Shalini', 'Sitalakshi', 'Vibhuti', 'Karuna', 'Padmini', 'Swarupa', 'Kavita', 'Yogita', 'Vidya', 'Ranjana', 'Meera', 'Diksha', 
+        'Sakshi', 'Shalini', 'Sitalakshi', 'Karuna', 'Padmini', 'Swarupa', 'Kavita', 'Yogita', 'Vidya', 'Ranjana', 'Meera', 'Diksha', 
         'Manisha', 'Renuka', 'Tanu', 'Lata', 'Sneha', 'Sudha', 'Durga', 'Sushma', 'Chhavi', 'Minal', 'Divya', 'Sonal', 'Saanvi', 'Narmada', 
         'Neelam', 'Suhani', 'Agnishikha', 'Laxmi', 'Shivani', 'Gulika', 'Megha', 'Swati', 'Vandita', 'Priti', 'Manjula', 'Ritika', 'Sujata', 
         'Urvashi', 'Rohini', 'Aishwarya', 'Tanvi', 'Bhakti', 'Rajashree', 'Chaitali', 'Saraswati', 'Jivika', 'Sumita', 'Vimalika', 'Kiran', 
         'Daya', 'Jahnavi', 'Rupika', 'Rajalakshmi', 'Ruchi', 'Vishali', 'Simran', 'Sharmila', 'Malini', 'Amrita', 'Shubhini', 'Vineeta', 
         'Mahika', 'Hemlata', 'Komal', 'Jaya', 'Pranjal', 'Nandini', 'Manju', 'Bhavita', 'Ashwati', 'Seema', 'Kamala', 'Deepika', 'Kanchana', 
         'Bhavani', 'Madhulika', 'Radhika', 'Yamuna', 'Nitika', 'Pallavi', 'Sharmistha', 'Rajni', 'Shital', 'Neha', 'Asha', 'Madhuri', 'Sampada', 
-        'Rashmi', 'Yamini', 'Tarini', 'Sushila', 'Bhawna', 'Isha', 'Nisha', 'Ami', 'Kumud', 'Suman', 'Bhargavi', 'Pranjali', 'Kiranvati', 
+        'Rashmi', 'Yamini', 'Tarini', 'Sushila', 'Bhawna', 'Isha', 'Nisha', 'Kumud', 'Suman', 'Bhargavi', 'Pranjali', 'Kiranvati', 
         'Vishaka', 'Neelima', 'Urmi', 'Pramila', 'Rupali', 'Tulsi', 'Sumanthi', 'Kiranmayi', 'Anika', 'Esha', 'Aaradhya', 'Rajeshwari', 'Soni', 
         'Shubhra', 'Bina', 'Kanchan', 'Chandana', 'Lalita', 'Pratibha', 'Vandana', 'Mitali', 'Vaidehi', 'Shubha', 'Vidushi', 'Puja', 'Vasavi', 
         'Shraddha', 'Shruti', 'Leela', 'Urmila', 'Radhini', 'Surbhi', 'Yasoda', 'Charulata', 'Tanya', 'Nivya', 'Savitri', 'Sheetal', 'Gargi', 
@@ -89,6 +89,9 @@ def generate_madhyapradesh_names(n, user_preference=None):# madhyapradesh Male F
 
     madhyapradesh_female_suffix= ["Rani", "Devi", "Bai", " ", " ", " ", " ",  " ", " ", " ", " ",  " ", " ", " ", " "]
 
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
     # Initialize user preferences
     preferences = init(user_preference)
 

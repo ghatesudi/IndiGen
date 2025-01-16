@@ -10,87 +10,165 @@ def init(user_preference=None):
     return user_preference
 
 #  Female First Names and Surnames
-def generate_female_names(n, user_preference=None):
+def generate_female_names(n, user_preference=None, seed=None):
 
     # Kerala Female First Names
-    female_firstname_hindu =  [ "Abha", "Akanksha", "Anandi", "Aradhana", "Archana", "Arpana", "Arpitha", "Astha", 
-    "Bhagavanti", "Bhagvanti", "Bindhu", "Chakori", "Chandni", "Chandra", "Chandramukhi", 
-    "Charu", "Chaya", "Deepa", "Deepika", "Dhanwanti", "Disha", "Divya", "Gaura", "Gauri", 
-    "Geetika", "Gunjan", "Hansi", "Heera", "Jyotnsa", "Kajal", "Kali", "Kalika", 
-    "Kalpana", "Kamala", "Kamana", "Kangan", "Kanta", "Kanya", "Kasturi", "Kavita", 
-    "Kesari", "Kishori", "Komal", "Kusum", "Lajja", "Lalita", "Madhuri", "Mahak", "Mahima", 
-    "Mala", "Mandodari", "Maneesha", "Manorama", "Manushi", "Mayuri", "Megha", "Meghana", 
-    "Mohini", "Mukta", "Namrata", "Neelima", "Neera", "Neeru", "Neeta", "Niharika", 
-    "Nirmala", "Nisha", "Nupur", "Pallavi", "Payal", "Pooja", "Poonam", "Poornima", 
-    "Prabhavati", "Pragathi", "Prakash", "Prakrithi", "Priya", "Pushpa", "Rajkumari", 
-    "Raka", "Ratna", "Ratnadevi", "Ritu", "Ruchira", "Sandhya", "Santhoshi", 
-    "Sanwati", "Sarita", "Saroja", "Sashi", "Saundarya", "Savita", "Seeta", "Shagun", 
-    "Shakun", "Shantidevi", "Sharmili", "Shyama", "Sugandha", "Sujatha", "Sukumari", 
-    "Suman", "Sumathi", "Sunanya", "Swarna", "Sweta", "Tara", "Tarika", 
-    "Usha", "Vandana", "Varsha", "Vasanthi", "Veena", "Vijaya", "Vineeta", "Yamini","Jyothi",
-    "Shakuntala", "Maina", "Naga", "Salabha", "Kokil", "Mangala", "Saubhagya", "Shantha", "Suguņa",
-    "Mamata", "Shobhana", "Priyamvada", "Suhasini", "Subhasini", "Sulochana", "Susheela", "Madhuri",
-    "Shalini", "Sharada", "Usha", "Laxmi", "Thellamma", "Shyamă", "Shyamala", "Parvathi", "Saraswathi", "Sitha",
-    "Savitha", "Savithri", "Gayathri", "Girija", "Shailaja", "Swarņamma", "Thangamma", "Suvarna", "Sonali", "Hiranya",
-    "Kanchana", "Kanakavalli", "Kanagi", "Hamalata", "Ratnamma", "Maragadavally", "Muthulakshmi", "Thulasi", "Latha",
-    "Lathika", "Vally", "Lavangika", "Saroja", "Kusuma", "Mallika", "Pushpa", "Mallika",
-    "Ganga", "Jamuna", "Saraswati", "Kaveri", "Godavari", "Thunga", "Narmada", "Kaphini", "Gomathi",
-    "Vasana", "Sugandha", "Saurabha", "Chandanavally", "Kasturi", "Surabhi", "Manjari", "Asvathi", "Kartika", "Rohini",
-    "Swathi", "Rewathi", "Chandraprabha", "Chothi", "Tirunal", "Avittham", "Veena", "Dhwani", "Geetha",
-    "Sangeetha", "Chitra", "Chitrarupa", "Chitrar", "Chitralekha", "Indumathi", "Menaka",
-     "Jyotsna", "Rashmi", "Deepti", "Prabha", "Kanti", "Shashikala", "Abhilasha", "Aditi", 
-     "Alochana", "Amala", "Amarava", "Amba", "Ambalika", "Ambara", "Ambika", "Ameesha", "Amogha", "Amrita", 
-    "Anagha", "Anamika", "Anandi", "Ananta", "Anantalaxmi", "Ananya", "Anargha", "Anasuya", "Anavadya", 
-    "Anchal", "Aneeta", "Angana", "Anila", "Anima", "Anindita", "Anjali", "Anjana", "Ankita", "Annapurna", 
-    "Antara", "Anubha", "Anuja", "Anukampa", "Anukriti", "Anumiti", "Anupama", "Anuprabha", "Anupriya", 
-    "Anuradha", "Anurekha", "Anushna", "Anusuya", "Anvita", "Anviti", "Aparajita", "Aparna", "Apeksha", 
-    "Apurti", "Aradhana", "Arasi", "Arati", "Archana", "Archita", "Arpana", "Arpita", "Aruna", "Arundati", 
-    "Arunima", "Arushi", "Asha", "Ashlesha", "Asita", "Asmita", "Astha", "Atreyi", "Badala", "Bela", 
-    "Bhagavati", "Bhakti", "Bhamini", "Bhanu", "Bhanuja", "Bhanumati", "Bharati", "Bhavana", "Bhavya", 
-    "Bhawani", "Bijali", "Bijli", "Bindiya", "Bulbul", "Chakori", "Chanchala", "Chandana", "Chandrakala", 
-    "Chandralekha", "Chandramukhi", "Chandrani", "Chandraprabha", "Chandravati", "Chandravati Tiwari", 
-    "Chandrika", "Charchita", "Charu", "Charulochana", "Chetana", "Chhabili", "Dakshayani", 
-    "Damayanti", "Damini", "Daya", "Deeksha", "Deepali", "Deepanjali", "Deepika", "Deepti", "Deshna", 
-    "Devaki", "Devakirti", "Devapriya", "Devashri", "Devasmita", "Devayani", "Devi", "Devika", "Dharana", 
-    "Dharini", "Dhatri", "Disha", "Diva", "Divya", "Draupadi", "Duhita", "Durga", "Ekta", "Gagana", "Gajra", 
-    "Gargi", "Garima", "Gaurangi", "Gauri", "Gaveshana", "Gayatri", "Geeta", "Geetanjali", "Geetika", 
-    "Girija", "Godhavari", "Gopika", "Greeshma", "Guncha", "Gunjan", "Haimawati", "Hansa", "Hansi", "Hansika", 
-    "Havisha", "Hemani", "Ichchha", "Iksa", "Ikshana", "Ikshita", "Ila", "Indira", "Indirani", "Indrani", 
-    "Indu", "Indumati", "Ipsa", "Ipsita", "Ira", "Janaki", "Jeevana", "Jhelam", "Juhi", "Juthika", "Kadambari", 
-    "Kajal", "Kalika", "Kalindi", "Kamala", "Kamini", "Kankan", "Kanta", "Kasturi", "Kaushalya", "Ketaki", 
-    "Kirana", "Krittika", "Kshama", "Kumkum", "Kumud", "Kumudini", "Kunti", "Kusum", "Lahari", "Lajja", 
-    "Lalita", "Lata", "Latika", "Laxmi", "Lopamudra", "Maanvi", "Madalasa", "Madhavi", "Madubala", "Mahamaya", 
-    "Mahasweta", "Mahaswetha", "Maithili", "Maitreyi", "Mala", "Malathi", "Malavika", "Mallika", "Mandakini", 
-    "Mandavi", "Mandodari", "Maneesha", "Mangala", "Maniprabha", "Manisha", "Manjari", "Manjira", "Manjoosha", 
-    "Manju", "Manjula", "Manjushri", "Manorama", "Mansa", "Mansi", "Maya", "Mayuri", "Medha", "Medini", "Meena", 
-    "Meenakshi", "Megha", "Meghana", "Mekhala", "Menaka", "Mita", "Mitali", "Modini", "Mohini", "Moksha", 
-    "Mona", "Mridula", "Mrigakshi", "Mrinal", "Mrinalini", "Mudita", "Mugdha", "Mukta", "Mukti", "Muskan", 
-    "Namita", "Namrata", "Nanda", "Nandini", "Nandita", "Narayani", "Naveena", "Nayana", "Neeharika", "Neelam", 
-    "Neelima", "Neena", "Neera", "Neerada", "Neeraja", "Neeta", "Neha", "Nidhi", "Nimisha", "Niranjana", 
-    "Nirjhari", "Nirjharini", "Nirmala", "Nirupama", "Nisha", "Nishchala", "Nishitha", "Nishtha", "Nitya", 
-    "Niyati", "Noopur", "Nootan", "Nupur", "Padma", "Padmaja", "Padmavati", "Padmini", "Pakhi", "Palak", 
-    "Pallavi", "Pankhuri", "Parakh", "Parameshvari", "Parameshwari", "Parikalpana", "Parikha", "Parikrama", 
-    "Parimal", "Parul", "Parvati", "Pataka", "Paulomi", "Pavana", "Pavitra", "Payal", "Phankudi", "Pipeelika", 
-    "Poojita", "Poorna", "Poornima", "Poorvi", "Poosha", "Prabha", "Prabhavati", "Prachi", "Prachura", 
-    "Pragati", "Pragya", "Prakriti", "Pramila", "Pramodini", "Pramudita", "Pranati", "Praneeta", "Pranvi", 
-    "Prarthita", "Prashamsha", "Prasiddhi", "Prateeksha", "Prateeti", "Prathiksha", "Pratibha", "Pratigya", 
-    "Pratima", "Pratishtha", "Preeti", "Prerana", "Preyasi", "Prithvi", "Priya", "Priyadarshini", "Priyamvada", 
-    "Priyanka", "Pulak", "Puloma", "Puneeta", "Pushipta", "Pushpa", "Pushpanjali", "Rachana", "Radha", "Ragini", 
-    "Rajani", "Rajanigandha", "Rajkumari", "Rajni", "Rajyalaxmi", "Rajyashri", "Raka", "Rakhi", "Raksha", 
-    "Rakshita", "Rama", "Ramana", "Ramba", "Ramya", "Rani", "Rasana", "Rashmika", "Rasmi", "Rati", 
-    "Ratna", "Ratnavali", "Ratnottama", "Reena", "Rekha", "Renu", "Renuka", "Revati", "Rewati", "Riddhi", 
-    "Ridhi", "Ritambhara", "Ritu", "Rituja", "Robini", "Roma", "Romila", "Roopa", "Roopali", "Roopashri", 
-    "Roopasi", "Roopmati", "Rooprekha", "Roshani", "Ruchi", "Ruchira", "Rukma", "Rukmini", "Rukumani", "Rupa", 
-    "Rupali", "Rupasi", "Sagarika", "Salila", "Sameera", "Sangita", "Sapna", "Sarbhati", "Sargam", "Satyabhama", 
-    "Satyavati", "Satyawati", "Satywati", "Savitri", "Shachi", "Shagun", "Shaila", "Shailaja", "Shaival", "Shaivya", 
-    "Shaiya", "Shakun", "Shakuntala", "Shalabha", "Shalini", "Shalvi", "Shampa", "Shanta", "Shanti", "Sharada", 
-    "Sharmishta", "Sharwari", "Shashi", "Shashikala", "Shefali", "Shikha", "Shilpa", "Shivani", "Shobha", 
-    "Shoma", "Shradha", "Shraddha", "Shravani", "Shravya", "Shrestha", "Shubhi", "Shubhra", "Shubham", "Siddhi", 
-    "Simran", "Sindhu", "Sitara", "Smita", "Sneha", "Sonal", "Sonalika", "Sreeja", "Srilata", "Suman", "Sumati", 
-    "Sumanja", "Sumita", "Sumitra", "Sushila", "Sushmita", "Sushruta", "Swati", "Swetlana", "Tanaya", 
-    "Tanirika", "Tanuja", "Tanushree", "Tara", "Tithira", "Trishala", "Tripti", "Trisha", "Triveni", "Tulika", 
-    "Uma", "Urmi", "Urmila", "Vasudha", "Vasundhara", "Veda", "Vedika", "Vidhya", "Vijaya", 
-    "Vijayalakshmi", "Vilasini", "Vishakha", "Vishali", "Vishnupriya", "Yamini", "Yamuna", "Yashoda", "Yashika", 
+    female_firstname_hindu =  [ "Abha", "Akanksha", "Anandi", "Aradhana", "Archana", "Arpana", "Arpitha", "Astha", 
+
+    "Bhagavanti", "Bhagvanti", "Bindhu", "Chakori", "Chandni", "Chandra", "Chandramukhi", 
+
+    "Charu", "Chaya", "Deepa", "Deepika", "Dhanwanti", "Disha", "Divya", "Gaura", "Gauri", 
+
+    "Geetika", "Gunjan", "Hansi", "Heera", "Jyotnsa", "Kajal", "Kali", "Kalika", 
+
+    "Kalpana", "Kamala", "Kamana", "Kangan", "Kanta", "Kanya", "Kasturi", "Kavita", 
+
+    "Kesari", "Kishori", "Komal", "Kusum", "Lajja", "Lalita", "Madhuri", "Mahak", "Mahima", 
+
+    "Mala", "Mandodari", "Maneesha", "Manorama", "Manushi", "Mayuri", "Megha", "Meghana", 
+
+    "Mohini", "Mukta", "Namrata", "Neelima", "Neera", "Neeru", "Neeta", "Niharika", 
+
+    "Nirmala", "Nisha", "Nupur", "Pallavi", "Payal", "Pooja", "Poonam", "Poornima", 
+
+    "Prabhavati", "Pragathi", "Prakash", "Prakrithi", "Priya", "Pushpa", "Rajkumari", 
+
+    "Raka", "Ratna", "Ratnadevi", "Ritu", "Ruchira", "Sandhya", "Santhoshi", 
+
+    "Sanwati", "Sarita", "Saroja", "Sashi", "Saundarya", "Savita", "Seeta", "Shagun", 
+
+    "Shakun", "Shantidevi", "Sharmili", "Shyama", "Sugandha", "Sujatha", "Sukumari", 
+
+    "Suman", "Sumathi", "Sunanya", "Swarna", "Sweta", "Tara", "Tarika", 
+
+    "Usha", "Vandana", "Varsha", "Vasanthi", "Veena", "Vijaya", "Vineeta", "Yamini","Jyothi",
+
+    "Shakuntala", "Maina", "Naga", "Salabha", "Kokil", "Mangala", "Saubhagya", "Shantha", "Suguņa",
+
+    "Mamata", "Shobhana", "Priyamvada", "Suhasini", "Subhasini", "Sulochana", "Susheela", "Madhuri",
+
+    "Shalini", "Sharada", "Usha", "Laxmi", "Thellamma", "Shyamă", "Shyamala", "Parvathi", "Saraswathi", "Sitha",
+
+    "Savitha", "Savithri", "Gayathri", "Girija", "Shailaja", "Swarņamma", "Thangamma", "Suvarna", "Sonali", "Hiranya",
+
+    "Kanchana", "Kanakavalli", "Kanagi", "Hamalata", "Ratnamma", "Maragadavally", "Muthulakshmi", "Thulasi", "Latha",
+
+    "Lathika", "Vally", "Lavangika", "Saroja", "Kusuma", "Mallika", "Pushpa", "Mallika",
+
+    "Ganga", "Jamuna", "Saraswati", "Kaveri", "Godavari", "Thunga", "Narmada", "Kaphini", "Gomathi",
+
+    "Vasana", "Sugandha", "Saurabha", "Chandanavally", "Kasturi", "Surabhi", "Manjari", "Asvathi", "Kartika", "Rohini",
+
+    "Swathi", "Rewathi", "Chandraprabha", "Chothi", "Tirunal", "Avittham", "Veena", "Dhwani", "Geetha",
+
+    "Sangeetha", "Chitra", "Chitrarupa", "Chitrar", "Chitralekha", "Indumathi", "Menaka",
+
+     "Jyotsna", "Rashmi", "Deepti", "Prabha", "Kanti", "Shashikala", "Abhilasha", "Aditi", 
+
+     "Alochana", "Amala", "Amarava", "Amba", "Ambalika", "Ambara", "Ambika", "Ameesha", "Amogha", "Amrita", 
+
+    "Anagha", "Anamika", "Anandi", "Ananta", "Anantalaxmi", "Ananya", "Anargha", "Anasuya", "Anavadya", 
+
+    "Anchal", "Aneeta", "Angana", "Anila", "Anima", "Anindita", "Anjali", "Anjana", "Ankita", "Annapurna", 
+
+    "Antara", "Anubha", "Anuja", "Anukampa", "Anukriti", "Anumiti", "Anupama", "Anuprabha", "Anupriya", 
+
+    "Anuradha", "Anurekha", "Anushna", "Anusuya", "Anvita", "Anviti", "Aparajita", "Aparna", "Apeksha", 
+
+    "Apurti", "Aradhana", "Arasi", "Arati", "Archana", "Archita", "Arpana", "Arpita", "Aruna", "Arundati", 
+
+    "Arunima", "Arushi", "Asha", "Ashlesha", "Asita", "Asmita", "Astha", "Atreyi", "Badala", "Bela", 
+
+    "Bhagavati", "Bhakti", "Bhamini", "Bhanu", "Bhanuja", "Bhanumati", "Bharati", "Bhavana", "Bhavya", 
+
+    "Bhawani", "Bijali", "Bijli", "Bindiya", "Bulbul", "Chakori", "Chanchala", "Chandana", "Chandrakala", 
+
+    "Chandralekha", "Chandramukhi", "Chandrani", "Chandraprabha", "Chandravati", "Chandravati Tiwari", 
+
+    "Chandrika", "Charchita", "Charu", "Charulochana", "Chetana", "Chhabili", "Dakshayani", 
+
+    "Damayanti", "Damini", "Daya", "Deeksha", "Deepali", "Deepanjali", "Deepika", "Deepti", "Deshna", 
+
+    "Devaki", "Devakirti", "Devapriya", "Devashri", "Devasmita", "Devayani", "Devi", "Devika", "Dharana", 
+
+    "Dharini", "Dhatri", "Disha", "Diva", "Divya", "Draupadi", "Duhita", "Durga", "Ekta", "Gagana", "Gajra", 
+
+    "Gargi", "Garima", "Gaurangi", "Gauri", "Gaveshana", "Gayatri", "Geeta", "Geetanjali", "Geetika", 
+
+    "Girija", "Godhavari", "Gopika", "Greeshma", "Guncha", "Gunjan", "Haimawati", "Hansa", "Hansi", "Hansika", 
+
+    "Havisha", "Hemani", "Ichchha", "Iksa", "Ikshana", "Ikshita", "Ila", "Indira", "Indirani", "Indrani", 
+
+    "Indu", "Indumati", "Ipsa", "Ipsita", "Ira", "Janaki", "Jeevana", "Jhelam", "Juhi", "Juthika", "Kadambari", 
+
+    "Kajal", "Kalika", "Kalindi", "Kamala", "Kamini", "Kankan", "Kanta", "Kasturi", "Kaushalya", "Ketaki", 
+
+    "Kirana", "Krittika", "Kshama", "Kumkum", "Kumud", "Kumudini", "Kunti", "Kusum", "Lahari", "Lajja", 
+
+    "Lalita", "Lata", "Latika", "Laxmi", "Lopamudra", "Maanvi", "Madalasa", "Madhavi", "Madubala", "Mahamaya", 
+
+    "Mahasweta", "Mahaswetha", "Maithili", "Maitreyi", "Mala", "Malathi", "Malavika", "Mallika", "Mandakini", 
+
+    "Mandavi", "Mandodari", "Maneesha", "Mangala", "Maniprabha", "Manisha", "Manjari", "Manjira", "Manjoosha", 
+
+    "Manju", "Manjula", "Manjushri", "Manorama", "Mansa", "Mansi", "Maya", "Mayuri", "Medha", "Medini", "Meena", 
+
+    "Meenakshi", "Megha", "Meghana", "Mekhala", "Menaka", "Mita", "Mitali", "Modini", "Mohini", "Moksha", 
+
+    "Mona", "Mridula", "Mrigakshi", "Mrinal", "Mrinalini", "Mudita", "Mugdha", "Mukta", "Mukti", "Muskan", 
+
+    "Namita", "Namrata", "Nanda", "Nandini", "Nandita", "Narayani", "Naveena", "Nayana", "Neeharika", "Neelam", 
+
+    "Neelima", "Neena", "Neera", "Neerada", "Neeraja", "Neeta", "Neha", "Nidhi", "Nimisha", "Niranjana", 
+
+    "Nirjhari", "Nirjharini", "Nirmala", "Nirupama", "Nisha", "Nishchala", "Nishitha", "Nishtha", "Nitya", 
+
+    "Niyati", "Noopur", "Nootan", "Nupur", "Padma", "Padmaja", "Padmavati", "Padmini", "Pakhi", "Palak", 
+
+    "Pallavi", "Pankhuri", "Parakh", "Parameshvari", "Parameshwari", "Parikalpana", "Parikha", "Parikrama", 
+
+    "Parimal", "Parul", "Parvati", "Pataka", "Paulomi", "Pavana", "Pavitra", "Payal", "Phankudi", "Pipeelika", 
+
+    "Poojita", "Poorna", "Poornima", "Poorvi", "Poosha", "Prabha", "Prabhavati", "Prachi", "Prachura", 
+
+    "Pragati", "Pragya", "Prakriti", "Pramila", "Pramodini", "Pramudita", "Pranati", "Praneeta", "Pranvi", 
+
+    "Prarthita", "Prashamsha", "Prasiddhi", "Prateeksha", "Prateeti", "Prathiksha", "Pratibha", "Pratigya", 
+
+    "Pratima", "Pratishtha", "Preeti", "Prerana", "Preyasi", "Prithvi", "Priya", "Priyadarshini", "Priyamvada", 
+
+    "Priyanka", "Pulak", "Puloma", "Puneeta", "Pushipta", "Pushpa", "Pushpanjali", "Rachana", "Radha", "Ragini", 
+
+    "Rajani", "Rajanigandha", "Rajkumari", "Rajni", "Rajyalaxmi", "Rajyashri", "Raka", "Rakhi", "Raksha", 
+
+    "Rakshita", "Rama", "Ramana", "Ramba", "Ramya", "Rani", "Rasana", "Rashmika", "Rasmi", "Rati", 
+
+    "Ratna", "Ratnavali", "Ratnottama", "Reena", "Rekha", "Renu", "Renuka", "Revati", "Rewati", "Riddhi", 
+
+    "Ridhi", "Ritambhara", "Ritu", "Rituja", "Robini", "Roma", "Romila", "Roopa", "Roopali", "Roopashri", 
+
+    "Roopasi", "Roopmati", "Rooprekha", "Roshani", "Ruchi", "Ruchira", "Rukma", "Rukmini", "Rukumani", "Rupa", 
+
+    "Rupali", "Rupasi", "Sagarika", "Salila", "Sameera", "Sangita", "Sapna", "Sarbhati", "Sargam", "Satyabhama", 
+
+    "Satyavati", "Satyawati", "Satywati", "Savitri", "Shachi", "Shagun", "Shaila", "Shailaja", "Shaival", "Shaivya", 
+
+    "Shaiya", "Shakun", "Shakuntala", "Shalabha", "Shalini", "Shalvi", "Shampa", "Shanta", "Shanti", "Sharada", 
+
+    "Sharmishta", "Sharwari", "Shashi", "Shashikala", "Shefali", "Shikha", "Shilpa", "Shivani", "Shobha", 
+
+    "Shoma", "Shradha", "Shraddha", "Shravani", "Shravya", "Shrestha", "Shubhi", "Shubhra", "Shubham", "Siddhi", 
+
+    "Simran", "Sindhu", "Sitara", "Smita", "Sneha", "Sonal", "Sonalika", "Sreeja", "Srilata", "Suman", "Sumati", 
+
+    "Sumanja", "Sumita", "Sumitra", "Sushila", "Sushmita", "Sushruta", "Swati", "Swetlana", "Tanaya", 
+
+    "Tanirika", "Tanuja", "Tanushree", "Tara", "Tithira", "Trishala", "Tripti", "Trisha", "Triveni", "Tulika", 
+
+    "Uma", "Urmi", "Urmila", "Vasudha", "Vasundhara", "Veda", "Vedika", "Vidhya", "Vijaya", 
+
+    "Vijayalakshmi", "Vilasini", "Vishakha", "Vishali", "Vishnupriya", "Yamini", "Yamuna", "Yashoda", "Yashika", 
+
     "Yogita", "Yukti",'Vidya', 'Kanaka', 'Yashoda', 'Charutha', 'Shruthi', 'Damini', 'Neeraja', 'Sumathi', 'Shubha', 'Pooja', 'Jyothi', 'Sadhvi', 'Avani',
         'Tejaswini', 'Ujjwala', 'Renuka', 'Aruna', 'Darika', 'Bhavini', 'Varsha', 'Gajani', 'Meena', 'Sajini', 'Tharini',
         'Vinaya', 'Dhanya', 'Navya', 'Bhavani', 'Thara', 'Jeevitha', 'Meenal', 'Preethi', 'Rama', 'Mohana', 'Ammu', 'Jagruti', 'Bhavana',
@@ -111,7 +189,7 @@ def generate_female_names(n, user_preference=None):
         'Vishalini', 'Vidhyashree', 'Manasa', 'Manju', 'Jaya', 'Bhuvana', 'Leena', 'Aalini', 'Vasavi', 'Aswathi', 'Sreevani',
         'Shanvika', 'Shanthini', 'Leela', 'Yamuna', 'Tulasi', 'Rajalakshmi', 'Sakshi', 'Siri', 'Janaki', 'Nandini', 'Anitha',
         'Anjali', 'Aadya', 'Padmavathi', 'Sanya', 'Malavika', 'Aadhya', 'Kiran', 'Keerti', 'Arpita', 'Rani', 'Nithya', 'Hamsa',
-        'Ravika', 'Kalyani', 'Kavitha', 'Achyuta', 'Suma', 'Shashi', 'Kripa', 'Hema', 'Aanjali', 'Shakthi', 'Nisha', 'Rithika',
+        'Ravika', 'Kalyani', 'Kavitha', 'Suma', 'Shashi', 'Kripa', 'Hema', 'Aanjali', 'Shakthi', 'Nisha', 'Rithika',
         'Indira', 'Pranathi', 'Vinitha', 'Shalini', 'Kiranmayi', 'Arathi', 'Parvathi', 'Karunya', 'Dhanalakshmi', 'Vishnupriya',
         'Deepti', 'Shilpa', 'Kalpana', 'Shrini', 'Riya', 'Vijaya', 'Sreelekshmi', 'Anagha', 'Nayana', 'Swara', 'Saranya',
         'Pushpavathy', 'Tilakavathy', 'Padmavathy', 'Suryavathy', 'Kalavathy', 'Amruthavalli','Maragathavalli', 'Kanagavalli',
@@ -149,15 +227,15 @@ def generate_female_names(n, user_preference=None):
         'Suman', 'Lubna', 'Hasna', 'Raiza', 'Sumiya', 'Naila', 'Arifa', 'Esha', 'Fatma', 'Zubairah', 'Zehra', 'Sarai', 'Lailah', 'Shahida', 
         'Jameela', 'Zohra', 'Jasmine', 'Marwa', 'Maliha', 'Jabira', 'Najma', 'Aabida', 'Aisha', 'Ishraq', 'Maheen', 'Shazia', 'Sibah', 'Misha', 
         'Haneen', 'Arwa', 'Aysha', 'Areeba', 'Rida', 'Laila', 'Hawra', 'Shamima', 'Iqra', 'Fareeha', 'Shaista', 'Aila', 'Sundus', 'Nabila', 
-        'Bilqis', 'Shaila', 'Raghda', 'Raniya', 'Simi', 'Zaynab', 'Rabiya', 'Fiza', 'Rabia', 'Amal', 'Sakina', 'Zahira', 'Shania', 'Sahar', 
+        'Bilqis', 'Shaila', 'Raghda', 'Raniya', 'Simi', 'Zaynab', 'Rabiya', 'Fiza', 'Rabia', 'Sakina', 'Zahira', 'Shania', 'Sahar', 
         'Uzma', 'Gulsher', 'Ameera', 'Liya', 'Mariam', 'Muneera', 'Noor', 'Tasneem', 'Hamida', 'Ruqiah', 'Nashwa', 'Anjum', 'Anum', 'Madiha', 
         'Dina', 'Jumana', 'Ummul', 'Shaheena', 'Wafa', 'Nida', 'Raheel', 'Eman', 'Zainab', 'Poonam', 'Basma', 'Feroze', 'Fairooza', 'Sumaiya', 
         'Kamilah', 'Mirah', 'Kausar', 'Sobia', 'Fariha', 'Inas', 'Ruqayya', 'Mekka', 'Asma', 'Shanaz', 'Alima', 'Suma', 'Khatijah', 'Khadeeja', 
         'Sara', 'Ghazala', 'Nigha', 'Haya', 'Fathima', 'Mariya', 'Badriya', 'Haseena', 'Inaya', 'Sumaira', 'Rania', 'Afsana', 'Maisha', 
         'Nafisa', 'Tariqa', 'Jamila', 'Sima', 'Zara', 'Hafsa', 'Shayma', 'Aziza', 'Warda', 'Ghina', 'Abla', 'Ayesha', 'Farah', 'Zoya', 
-        'Raheela', 'Tahira', 'Lana', 'Sadaf', 'Basmah', 'Kawthar', 'Aafiya', 'Ghadir', 'Dalal', 'Shaheen', 'Leena', 'Raheema', 'Afra', 'Rasha', 
+        'Raheela', 'Tahira', 'Lana', 'Sadaf', 'Basmah', 'Kawthar', 'Aafiya', 'Leena', 'Raheema', 'Afra', 'Rasha', 
         'Huda', 'Aleena', 'Anisa', 'Hina', 'Maha', 'Sajida', 'Jazmin', 'Rashida', 'Sanaa', 'Kamar', 'Syeda', 'Fatimah', 'Fatima', 'Maimuna', 
-        'Fareeda', 'Ainul', 'Hanan', 'Muna', 'Asiya', 'Sana', 'Sufiya', 'Gulzar', 'Maheerah', 'Shireen', 'Zeenat', 'Rehama', 'Khadija', 
+        'Fareeda', 'Ainul', 'Hanan', 'Muna', 'Asiya', 'Sana', 'Sufiya', 'Maheerah', 'Shireen', 'Zeenat', 'Rehama', 'Khadija', 
         'Ameerah', 'Meher', 'Nisreen', 'Sadia', 'Shatha', 'Khalida', 'Shanaya', 'Rima', 'Azra', 'Bushra', 'Alia', 'Raihana', 'Yasmin', 
         'Siti', 'Aminah', 'Lina', 'Asfiya', 'Samira', 'Bibi', 'Durrah', 'Hafeeza', 'Suhaila', 'Mehreen', 'Alya', 'Nehar', 'Saira', 'Dania', 
         'Shifa', 'Zubaida', 'Haniya', 'Zahra', 'Nisa', 'Muzna']
@@ -169,7 +247,7 @@ def generate_female_names(n, user_preference=None):
         "Alavi", "Kutty", "Kunjalikutty", "Muneer", "Pookoya", "Shihabudheen", "Madhavath", "Abdulkareem",
         "Thangal", "Fazal", "Vallikkunnu", "Mannan", "Muthalali", "Musliyar", "Nadapuram", "Chalappuram",
         "Koroth", "Palliyath", "Meethal", "Chekkan", "Syeda", "Zahra", "Hidaya", "Ashrafiya", "Rukayya",
-        "Salahuddin", "Fatimah", "Al-Hassan", "Al-Khansa", "Shahida"]
+        "Salahuddin", "Fatimah", "Al-Hassan", "Al-Khansa", "Shahida", "Gulzar"]
 
     #christian names
     female_firstname_christian = [
@@ -237,6 +315,10 @@ def generate_female_names(n, user_preference=None):
 
      # Define religion percentages
     religion_percentages = {'hindu': 70, 'muslim': 20, 'christian': 10}
+
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
 
     # Initialize user preferences
     preferences = init(user_preference)

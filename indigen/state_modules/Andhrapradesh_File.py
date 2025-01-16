@@ -10,7 +10,7 @@ def init(user_preference=None):
         return user_preference
 
 # andhrapradesh Male First Names
-def generate_andhrapradesh_names(n, user_preference=None):
+def generate_andhrapradesh_names(n, user_preference=None, seed=None):
     
     andhrapradesh_male_firstname= [
         "Aadhitya", "Aakash", "Aanjaneya", "Abhiram", "Achyuth", "Aditya", "Agastya", "Ajay", "Akash", "Akshay", 
@@ -21,7 +21,7 @@ def generate_andhrapradesh_names(n, user_preference=None):
         "Chiranjeevi", "Dakshinamurthy", "Dhananjay", "Dharan", "Dharmendra", "Dharmesh", "Dinesh", "Divakar", 
         "Durgesh", "Dwaraka", "Ekambaram", "Elango", "Eshwar", "Ganapati", "Gangadhara", "Ganesha", "Gangaiah", 
         "Garuda", "Gaurav", "Gautham", "Giridhar", "Girish", "Govinda", "Guhan", "Hanuman", "Hari", "Haribabu", 
-        "Harikrishna", "Harish", "Harsha", "Harshavardhan", "Hemachandra", "Hemal", "Hemanth", "Himanshu", "Indra", 
+        "Harikrishna", "Harish", "Harsha", "Harshavardhan", "Hemachandra", "Hemanth", "Himanshu", "Indra", 
         "Ishwara", "Jagadeesh", "Jagannath", "Jagdish", "Janardhan", "Jayanth", "Jayaram", "Jayasimha", "Jitendra", 
         "Kalyan", "Kamal", "Kamalakar", "Kamalesh", "Kamesh", "Kanakaraju", "Kanthaiah", "Karunakar", 
         "Kasthuri", "Keshava", "Ketan", "Kiran", "Kishore", "Krishnamurthy", "Krishnamoorthy", "Krishnaiah", 
@@ -40,7 +40,7 @@ def generate_andhrapradesh_names(n, user_preference=None):
         "Suryaprakash", "Swamy", "Tanishq", "Thirumal", "Uday", "Umesh", "Upendra", "Vamana", "Vamsi", 
         "Varun", "Vasu", "Vasudevaiah", "Venkanna", "Venkataramanappa", "Venkataramanaiah", "Venkatesaiah", 
         "Venkateswaraiah", "Venkayya", "Vidyasagar", "Vijayakumar", "Vinay", "Vishal", "Vishnu", 
-        "Vishnuvardhan", "Viswamitra", "Vivek", "Vyas", "Yadagir", "Yajnesh", "Yamuna", "Yashwant", "Yogendra", 
+        "Vishnuvardhan", "Viswamitra", "Vivek", "Vyas", "Yadagir", "Yajnesh", "Yashwant", "Yogendra", 
         "Yoganandaiah", "Yogi", "Yudhistira", "Adiseshaiah", "Balakrishnaiah", "Bhanudas", "Chandrappa", 
         "Chandraiah", "Gangadharaiah", "Garudaiah", "Govindarajaiah", "Hanumanthaiah", "Harinath", 
         "Harihara", "Ilavarasan", "Jayadevaiah", "Jayasimhaiah", "Kaleswaraiah", "Krishnayya", "Lingamurthy", 
@@ -64,7 +64,7 @@ def generate_andhrapradesh_names(n, user_preference=None):
         "Sugunayya", "Sundararajaiah", "Surendramma", "Suryanarayanaiah", "Swami", "Tathachari", "Tirupataiah", 
         "Tirupathi", "Tulasiramayya", "Umapathi", "Upendraiah", "Vangaraiah", "Varadarajaiah", "Venkatesham", 
         "Venkateshulu", "Vijayayya", "Vignesh", "Vishnuvardhanayya", "Yadavaiah", "Yagnavalkya", "Yamunayya", 
-        "Yerranna", "Adikesavulu", "Ammanna", "Annayya", "Annaraya", "Annavarapu", "Appalanaidu", "Aravindhaiah", 
+        "Yerranna", "Adikesavulu", "Ammanna", "Annayya", "Annaraya", "Appalanaidu", "Aravindhaiah", 
         "Arjunanna", "Baburao", "Balanna", "Balaramaiah", "Bhimaiah", "Bhoopal", "Brahmanandaiah", "Chennakesavulu", 
         "Chidambarayya", "Devayya", "Dhananjayaiah", "Dheerajanna", "Durgaprasadaiah", "Eknathayya", "Elaparamathaiah", 
         "Gangarao", "Garikaiah", "Gopalaiah", "Govindaiah", "Gururajaiah", "Hampaiah", "Hariharaiah", "Harinathaiah", 
@@ -103,7 +103,7 @@ def generate_andhrapradesh_names(n, user_preference=None):
                                    'Sailaja', 'Venkayamma', 'Vidhya', 'Aadhya', 'Pratibha', 'Swarna', 'Lakshmidevi', 'Adhira', 'Kannamma', 'Soni', 'Hima', 'Pragna', 'Kanakadurga',
                                    'Nageswari', 'Charitha', 'Vinaya', 'Sindhu', 'Devi', 'Bhavana', 'Kunti', 'Kalpana', 'Nishitha', 'Devika', 'Rohini', 'Bala', 'Shyamalamma',
                                    'Radhika', 'Tanvi', 'Abhilasha', 'Eshwari', 'Janaki', 'Mamatha', 'Gowramma', 'Yamini', 'Vasudha', 'Sandhya', 'Yellamma',
-                                   'Gagana', 'Shivani', 'Anagha', 'Vaishnavi', 'Rekha', 'Chinthamani', 'Sadhana', 'Adithya', 'Swapna', 'Vishnupriya', 'Harinakshi',
+                                   'Gagana', 'Shivani', 'Anagha', 'Vaishnavi', 'Rekha', 'Chinthamani', 'Sadhana', 'Swapna', 'Vishnupriya', 'Harinakshi',
                                    'Padmavathi', 'Prathima', 'Yogitha', 'Alekhya', 'Soubhagya', 'Ahalya', 'Naga Lakshmi', 'Maheshwari', 'Annapoorna', 'Archana', 'Thulasi',
                                    'Mrinalini', 'Aliveni', 'Yogini', 'Nandhini', 'Sheela', 'Krishnaveni', 'Sravani', 'Roopa', 'Revathi', 'Aamani', 'Bhagirathi', 'Rani',
                                    'Subhadra', 'Sangeetha', 'Kamakshi', 'Durga', 'Vijayamma', 'Shashi', 'Pallavi', 'Mrudula', 'Kamalaja', 'Rajalakshmi', 'Shakuntala',
@@ -146,6 +146,9 @@ def generate_andhrapradesh_names(n, user_preference=None):
         "Totakura", "Tripuraneni", "Udatha", "Udayagiri", "Uppalapati", "Uraga", "Vajji", "Vallabhaneni", 
         "Vemuri", "Visweswara"]
 
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
 
     # Initialize user preferences (default to 'full' name type if not passed)
     preferences = init(user_preference)

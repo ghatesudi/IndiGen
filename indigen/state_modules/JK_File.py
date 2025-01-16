@@ -2,6 +2,7 @@ import random
 import pandas as pd
 import os
 
+
 # Function to initialize preferences from user input (defaults to 'full' name type if not passed)
 def init(user_preference=None):
     if user_preference is None:
@@ -9,7 +10,7 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_jk_names(n, user_preference=None):
+def generate_jk_names(n, user_preference=None, seed=None):
 
     # Kashmiri Pandit Male First Names
     kashmiri_pandit_male_firstname= [
@@ -54,53 +55,28 @@ def generate_jk_names(n, user_preference=None):
 
     #  Male Ladakhi First Names
     ladakh_male_firstname= [
-        "Ajam", "Tenzin", "Sonam", "Jigme", "Tsering", "Karma", "Dorje", "Namgyal", "Choden", "Nawang",
-        "Lobsang", "Tashi", "Yangchen", "Phuntsok", "Rinchen", "Tshering", "Kunzang", "Zangpo", "Tenzin",
-        "Tsewang", "Dawa", "Kalsang", "Tashi", "Sherab", "Yeshe", "Dechen", "Tenzin", "Ngawang", 
-        "Pema", "Pema", "Dorje", "Choskyi", "Zangmo", "Kundun", "Norbu", "Rigzin", "Lhamo", "Chukyi", 
-        "Dawa", "Zawa", "Rinchen", "Lama", "Karma", "Sangay", "Yangzom", "Phurpa", "Karma", "Ngawang",
-        "Nima", "Momo", "Tseten", "Chakmo", "Zhuwa", "Jigme", "Lama", "Lobsang", "Tenzin", "Tsering", 
-        "Tenzin", "Mendrel", "Pema", "Sonam", "Tashi", "Lobsang", "Sangpo", "Dawa", "Palden", "Sherpa", 
-        "Dorje", "Tsering", "Lobsang", "Tenzin", "Kalsang", "Yangzom", "Zangmo", "Sherab", "Namgyal", 
-        "Phurba", "Rinpoche", "Dawa", "Kalsang", "Sangay", "Sangpo", "Jigme", "Kunzang", "Rinchen", 
-        "Phurpa", "Tsewang", "Chukyi", "Zawa", "Sangmo", "Tenzin", "Jigme", "Ngawang", "Dorje", "Yeshe", 
-        "Sonam", "Karma", "Lobsang", "Rinchen", "Tsering", "Lama", "Choden", "Tshering", "Rinchen", 
-        "Tsewang", "Tenzin", "Pema", "Yangchen", "Karma", "Dawa", "Tsering", "Tenzin", "Yangzom", "Jigme"]
-
+    "Lobsang", "Lama", "Sangpo", "Kalsang", "Rigzin", "Palden", "Chakmo", "Sangay", 
+    "Tenzin", "Nawang", "Namgyal", "Yeshe", "Rinchen", "Tsering", "Kundun", "Rinpoche", 
+    "Dorje", "Tsewang", "Phuntsok", "Karma", "Sherab", "Tshering", "Kunzang", "Phurpa", 
+    "Zangpo"]
 
     # Ladakhi Surnames
-    ladakh_surname= [
-        "Angmo", "Choden", "Dorje", "Tenzin", "Sangpo", "Rinchen", "Zangpo", "Karma", "Lama", "Sonam",
-        "Namgyal", "Tsewang", "Phuntsok", "Lobsang", "Yangchen", "Sherpa", "Kunzang", "Tsering", "Choskyi",
-        "Zangmo", "Tashichoden", "Rinchen", "Ngawang", "Tendhar", "Palden", "Chakmo", "Phurba", "Zawa",
-        "Rinpoche", "Tharchin", "Kalsang", "Rinchen", "Gyalpo", "Mendrel", "Dorje", "Tashong", "Yangzom",
-        "Gyaltsen", "Sangmo", "Jigme", "Phurpa", "Sungmo", "Momo", "Tenzin", "Tshering", "Thundup",
-        "Tashi", "Nima", "Dawa", "Jigdral", "Tshering", "Wangchuk", "Palmo", "Norbu", "Zigpo", "Chakyi",
-        "Chudak", "Yunda", "Gonpo", "Lhawang", "Lama", "Gyatso", "Dornay", "Pema", "Lobsang", "Sangay",
-        "Dawa", "Norbu", "Tsewang", "Gendun", "Zangmo", "Karma", "Lobsang", "Tsering", "Chukyi", "Ngawang",
-        "Phunzo", "Palchen", "Tenzing", "Tashichoden", "Rinchen", "Chawang", "Tsewang", "Rinchen", "Sherab",
-        "Tsultrim", "Drolma", "Tsomo", "Namdrol", "Gyatso", "Tensung", "Lhagyari", "Gyelpo", "Nangpo", "Jigme",
-        "Dorji", "Sharma", "Zalpo", "Lama", "Shambu", "Chhakpa", "Dama", "Sangpo", "Tsenpo", "Samdup",
-        "Lhabuk", "Zawang", "Sangpo", "Jampa", "Kelden", "Tsewang", "Jigdral", "Namgyal", "Tsering", "Gyalpo",
-        "Kundun", "Gyalmo", "Sangpo", "Sangmo", "Wangpo", "Rinpoche", "Gye", "Lunpo", "Karma", "Ngawang"]
-
-
+    ladakh_surname= ['Zangmo', 'Ngawang', 'Sangpo', 'Sungmo', 'Namdrol', 'Mendrel', 'Dama', 'Phurba', 'Kundun',
+    'Zalpo', 'Palden', 'Choden', 'Wangchuk', 'Chudak', 'Jigdral', 'Chhakpa', 'Dorje', 'Sherpa', 'Tenzing', 'Phunzo',
+    'Chakyi', 'Rinpoche', 'Kelden', 'Momo', 'Yunda', 'Lobsang', 'Palmo', 'Phuntsok', 'Tashi', 'Nangpo', 'Tsewang',
+    'Dorji', 'Tashong', 'Gonpo', 'Samdup', 'Palchen', 'Tshering', 'Gyalpo', 'Kalsang', 'Sangmo', 'Lhagyari',
+    'Kunzang', 'Angmo', 'Zawa', 'Tharchin', 'Shambu', 'Tsomo', 'Tsultrim', 'Dornay', 'Gendun', 'Lama', 'Zigpo',
+    'Gyalmo', 'Gye', 'Sherab', 'Lhabuk', 'Sonam', 'Phurpa', 'Tashichoden', 'Sangay', 'Chawang', 'Karma', 'Jampa',
+    'Yangchen', 'Gyaltsen', 'Namgyal', 'Jigme', 'Lunpo', 'Nima', 'Drolma', 'Tsering', 'Tensung', 'Choskyi', 'Tenzin',
+    'Zawang', 'Dawa', 'Zangpo', 'Lhawang','Norbu', 'Wangpo', 'Sharma', 'Tendhar', 'Tsenpo', 'Rinchen', 'Chukyi',
+    'Chakmo', 'Gyatso', 'Pema', 'Yangzom', 'Thundup', 'Gyelpo']  
+        
     #  Female Ladakhi First Names
     ladakh_female_firstname= [
-        "Aditi", "Chandini", "Dechen", "Dolma", "Gyalmo", "Lhamo", "Nima", "Pema", "Rigzin", "Sonam",
-        "Tenzin", "Yangchen", "Yuden", "Jigme", "Lama", "Maya", "Dawa", "Sangmo", "Choskyi", "Nawang",
-        "Norbu", "Phuntsok", "Sangay", "Karma", "Lhamo", "Lhagyari", "Palmo", "Tenzin", "Zangmo",
-        "Pema", "Tashi", "Yangchen", "Tsering", "Namgyal", "Choden", "Choden", "Pema", "Kunsang",
-        "Tsering", "Ngawang", "Nima", "Lobsang", "Norbu", "Drolma", "Momo", "Dolma", "Sharmo", 
-        "Chukyi", "Zawmo", "Pema", "Sonam", "Jigme", "Dechen", "Tsewang", "Sherab", "Yeshe",
-        "Chakmo", "Tshomo", "Yundon", "Zhiwa", "Jigme", "Tseten", "Zangmo", "Dolan", "Zathmo",
-        "Rigzin", "Lhamo", "Kunsang", "Norbu", "Dolkar", "Pema", "Tenzin", "Sonam", "Dolma",
-        "Sangmo", "Karma", "Tashi", "Rigzin", "Dorje", "Tshering", "Yama", "Yangchen", "Tenzin",
-        "Tashi", "Sonam", "Kundun", "Tseten", "Dechen", "Choden", "Jigme", "Dawa", "Kalsang",
-        "Ngawang", "Pema", "Lobsang", "Tenzin", "Tsering", "Momo", "Lhamo", "Yunmo", "Tsewang",
-        "Choden", "Drolma", "Tenzin", "Lobsang", "Norbu", "Chukyi", "Yangchen", "Zangmo", "Karma",
-        "Sangay", "Sonam", "Rigzin", "Tsering", "Lama", "Lhagyari", "Sangmo", "Dechen", "Chhime",
-        "Jigme", "Dolma", "Lhamo", "Yangchen", "Nima", "Dawa"]
+    "Aditi", "Chakmo", "Choden", "Chhime", "Choskyi", "Dolma", "Drolma", "Gyalmo",
+    "Lhamo", "Lhagyari", "Maya", "Momo", "Palmo", "Pema", "Sangmo", "Sonam", "Tashi",
+    "Tshomo", "Yangchen", "Yunmo", "Zangmo", "Zawmo", "Zathmo", "Yeshe"
+]
 
     # Muslim Male First Names
     muslim_male_firstname= [
@@ -138,19 +114,19 @@ def generate_jk_names(n, user_preference=None):
         "Jamila", "Khadija", "Laila", "Mahira", "Mariam", "Muneeza", "Nadira", "Nazia", "Rashida", "Sadia",
         "Samira", "Shazia", "Sana", "Sobia", "Sultana", "Tabassum", "Yasmin", "Zahra", "Zainab", "Zoya",
         "Aisha", "Amira", "Anisa", "Fariha", "Imrana", "Kalsoom", "Lubna", "Maimuna", "Mehmooda", "Nargis",
-        "Nasreen", "Ruksana", "Shahnaz", "Shamim", "Sumbul", "Sana", "Raza", "Riffat", "Sana", "Tahira",
+        "Nasreen", "Ruksana", "Shahnaz", "Sumbul", "Sana", "Razia", "Riffat", "Sana", "Tahira",
         "Ayesha", "Naureen", "Farhana", "Rubina", "Zainab", "Asima", "Madiha", "Zehra", "Nazia", "Neelam",
         "Samina", "Nazia", "Safia", "Sahar", "Nilofer", "Muneera", "Shabana", "Shabnam", "Sabeen", "Rizwana",
         "Sumbul", "Meher", "Sumaiya", "Shaista", "Nazia", "Sana", "Hafsa", "Saima", "Zehra", "Alina",
         "Ahsina", "Hafsa", "Shabana", "Seema", "Kausar", "Zeenat", "Sadia", "Zakia", "Lubna", "Samina",
-        "Sadia", "Sara", "Nabila", "Kiran", "Shamim", "Tabassum", "Asma", "Farida", "Sabeen", "Shabnam",
+        "Sadia", "Sara", "Nabila", "Kiran", "Shameema", "Tabassum", "Asma", "Farida", "Sabeen", "Shabnam",
         "Mahnoor", "Rabab", "Nasreen", "Areeba", "Rubina", "Fariha", "Amina", "Zainab", "Aasia", "Nargis",
         "Saima", "Sadaf", "Shahnaz", "Mariam", "Saira", "Fozia", "Bisma", "Kiran", "Zaira", "Seher",
-        "Sonia", "Tasneem", "Lubna", "Nighat", "Mehreen", "Nadia", "Asiya", "Shaheen", "Sara", "Zara",
+        "Sonia", "Tasneem", "Lubna", "Nighat", "Mehreen", "Nadia", "Asiya", "Sara", "Zara",
         "Mishal", "Tehmina", "Faryal", "Zainab", "Kausar", "Sana", "Aminah", "Nadira", "Khalida", "Iqra",
         "Rida", "Ameena", "Sumayya", "Sana", "Shiza", "Zehra", "Mubashira", "Aaliya", "Sumbul", "Tuba",
         "Rubina", "Sakina", "Meher", "Nadira", "Sana", "Amina", "Mariya", "Shakila", "Sumbul", "Rukhsana",
-        "Faiza", "Madiha", "Samina", "Shamim", "Imrana", "Sumaiya", "Mehmooda", "Saira", "Shahla", "Sana",
+        "Faiza", "Madiha", "Samina", "Imrana", "Sumaiya", "Mehmooda", "Saira", "Shahla", "Sana",
         "Neelum", "Hina", "Muneera", "Ayesha", "Zahra", "Mishal", "Nabila", "Lubna", "Shabana", "Sara",
         "Tazeen", "Farzana", "Sania", "Naureen", "Shahnaz", "Shaista", "Sana", "Saniya", "Fatima", "Riffat",
         "Areeba", "Mehreen", "Samira", "Nabila", "Sanya", "Shazia", "Amina", "Saba", "Ayesha", "Mariam",
@@ -160,8 +136,8 @@ def generate_jk_names(n, user_preference=None):
         "Mariam", "Mira", "Lubna", "Kausar", "Zainab", "Rizwana", "Fariha", "Farida", "Jameela", "Nashita",
         "Rafat", "Tabassum", "Sabeen", "Amena", "Alina", "Sahar", "Ahsina", "Saira", "Bisma", "Shahnaz",
         "Samia", "Meher", "Sadiqa", "Shazia", "Jamilah", "Zoya", "Saima", "Sana", "Fatima", "Azra", "Zainab",
-        "Mubashira", "Shahrzad", "Shiza", "Samina", "Hina", "Ruba", "Sumaiya", "Sadiya", "Rehana", "Samar",
-        "Tehmina", "Asma", "Shaheen", "Zara", "Sushma", "Sana", "Safa", "Raheel", "Rukhsana", "Zara"]
+        "Mubashira", "Shahrzad", "Shiza", "Samina", "Hina", "Ruba", "Sumaiya", "Sadiya", "Rehana", 
+        "Tehmina", "Asma", "Zara", "Sushma", "Sana", "Safa", "Raheel", "Rukhsana", "Zara"]
 
 
     # Muslim Surnames
@@ -178,6 +154,10 @@ def generate_jk_names(n, user_preference=None):
         "Abdullah", "Hassan", "Ahmad", "Zahid", "Imran", "Khaliq", "Nasir", "Qamar", "Nashit", "Rizwan",
         "Tanveer", "Sajid", "Khatana", "Mohammad", "Abbas", "Tariq", "Sattar", "Saeed", "Syed", "Hamza"]
     
+# Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+
     # Initialize user preferences
     preferences = init(user_preference)
 

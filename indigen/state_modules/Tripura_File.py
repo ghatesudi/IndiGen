@@ -9,20 +9,19 @@ def init(user_preference=None):
     return user_preference
 
 # Bihar Male and Female First Names and Surnames
-def generate_tripura_names(n, user_preference=None):
-
+def generate_tripura_names(n, user_preference=None, seed=None):
     # tripura Male First Names
     tripura_male_firstname = [
         "Abhijit", "Anirban", "Arup", "Biplab", "Biswajit", "Birendra", "Chandan", "Chandrakanta", "Dinesh", "Debojit", "Deepak",
         "Dilip", "Ganesh", "Gopal", "Gobinda", "Harish", "Himanshu", "Hira", "Indrajit", "Indra", "Kamal", "Kalyan", "Kanchan",
-        "Kailash", "Laxman", "Loknath", "Manik", "Manish", "Madhusree", "Mohan", "Mantu", "Mangal", "Mithun", "Nirmal", "Nayan",
+        "Kailash", "Laxman", "Loknath", "Manik", "Manish", "Mohan", "Mantu", "Mangal", "Mithun", "Nirmal", "Nayan",
         "Narendra", "Nitai", "Pritam", "Purna", "Pranab", "Rajkumar", "Rajib", "Rajendra", "Ranjit", "Ratan", "Rupesh", "Rakesh",
         "Roshan", "Ramakant", "Shyam", "Somnath", "Suraj", "Santosh", "Sunil", "Suresh", "Shankar", "Shubham", "Subhendu", "Siddharth",
         "Subhash", "Surendra", "Tarun", "Tanmoy", "Uday", "Ujjal", "Utpal", "Vikash", "Vishal", "Vipul", "Vikas", "Ajay", "Arjun",
         "Binoy", "Bishal", "Bimal", "Dipankar", "Goutam", "Jagat", "Jitendra", "Jagdish", "Jibon", "Keshab", "Krishan", "Lokenath",
         "Mahendra", "Mohit", "Manoranjan", "Munindra", "Narayan", "Pankaj", "Prasanta", "Pradeep", "Purnendu", "Raghunath", "Samarendra",
         "Subrata", "Suryakant", "Tushar", "Ujjwal", "Aabir", "Aakash", "Abhinav", "Adhir", "Advit", "Ajoy", "Akash", "Alok", "Animesh",
-        "Anindya", "Arindam", "Arvind", "Asit", "Ashoke", "Atin", "Avinash", "Banesh", "Bandhan", "Barun", "Bikash", "Bipin", "Brij",
+        "Arindam", "Arvind", "Asit", "Ashoke", "Atin", "Avinash", "Banesh", "Bandhan", "Barun", "Bikash", "Bipin", "Brij",
         "Chaitanya", "Chandranath", "Charan", "Chintan", "Dipak", "Diptanshu", "Dhruba", "Dipendra", "Durgesh", "Gaurav", "Gokul",
         "Gour", "Harendra", "Hemant", "Himadri", "Indranil", "Iqbal", "Ishwar", "Jadav", "Jagadish", "Jagannath", "Jayanth", "Jayanta",
         "Kamini", "Kanishk", "Kedar", "Kiran", "Krishnan", "Kumar", "Lokesh", "Manindra", "Mukesh", "Mitesh", "Nandini", "Nilay",
@@ -64,6 +63,11 @@ def generate_tripura_names(n, user_preference=None):
         "Bhaswati", "Bibha", "Chandra", "Chandini", "Dipali", "Kusum", "Madhubala", "Nivedita", "Prabha", "Pratima", "Rajani", "Rakhi", "Ritu", "Ruma", "Sadhana", "Sukanya",
         "Sumanita", "Shubhra", "Shabari", "Shilpi", "Tanvi", "Trishna","Ushashi", "Varsha", "Vijaya", "Anima", "Amrita", "Asmita", "Barsha", "Barnali", "Brishti", "Charushila",
         "Diti", "Gargee", "Goutami", "Kanti", "Lajja", "Manisha" ]  
+    
+    # Set the random seed if provided
+    if seed is not None:
+        random.seed(seed)
+    
     # Initialize user preferences
     preferences = init(user_preference)
 

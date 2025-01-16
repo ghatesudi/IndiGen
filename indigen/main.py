@@ -1,7 +1,8 @@
 import os
 import importlib
-from .utils.state_utils import get_state_modules  # Assuming you have this utility function
+import pyfiglet
 import pandas as pd
+from .utils.state_utils import get_state_modules  # Assuming you have this utility function
 from .utils.common import save_names_to_csv, format_name_data
 import sys
 
@@ -39,19 +40,21 @@ def dynamic_import_state_functions():
     return state_functions
 
 
+
 def display_menu():
     """Display the user menu."""
-    print("\nWelcome to the State Name Generator!")
-    print("Options:")
-    print("1. Generate names for a specific state")
-    print("2. Generate names from all states (default)")
+    #print("\nWelcome to IndiGen..")
+    #print()
+    print("Available Options")
+    print("Generate names for a specific state")
+    print("Generate names from all states (default)\n")
 
 def get_state_choice():
     """Prompt the user to select a state or choose all states."""
     state_functions = dynamic_import_state_functions()  # Get state functions dynamically
 
     # Show the available states
-    print("Available states:")
+    print("Available file options:")
     all_states = list(state_functions.keys())  # List of available states
     #print(f"Available states: {all_states}")  # Debug print
 
@@ -60,7 +63,9 @@ def get_state_choice():
         return None, None, None
     
     for idx, state in enumerate(all_states, 1):
-        print(f"{idx}. {state}")
+        state_name = state.split('_')[0]
+        print(f"{idx}. {state_name}")
+    print()
 
     state_choice = input("Enter the state number, name, or 'all' for all states: ").strip()
     if state_choice.lower() == 'all' or state_choice == '':
@@ -104,6 +109,14 @@ def get_name_type():
         return {'name_type': 'first'}
     else:
         return {'name_type': 'full'}
+        
+def get_seed_preference():
+    """Prompt the user to decide whether to use a random seed for deterministic results."""
+    use_seed = input("Use a fixed random seed for deterministic results? (yes/no, default is no): ").strip().lower()
+    if use_seed == "yes":
+        seed_value = input("Enter the seed value (leave blank for default seed 42): ").strip()
+        return int(seed_value) if seed_value.isdigit() else 42
+    return None
 
 def main():
     """Main function to drive the name generation process."""
@@ -126,6 +139,9 @@ def main():
     # Get the name type (first or full)
     user_preference = get_name_type()
 
+    # Get the random seed preference
+    seed_value = get_seed_preference()
+
     # Generate the names for the selected state(s)
     print("\nGenerated Names:")
     try:
@@ -135,7 +151,7 @@ def main():
                 generate_function = state_functions.get(state)
                 if callable(generate_function):
                     print(f"\nGenerating names for {state}...")
-                    names = generate_function(num_names, user_preference)
+                    names = generate_function(num_names, user_preference,seed_value )
                     if isinstance(names, pd.DataFrame):
                         print(names.to_string(index=False))
                     else:
@@ -146,7 +162,7 @@ def main():
             # Generate names for the selected state
             generate_function = state_functions.get(state_choice)
             if callable(generate_function):
-                names = generate_function(num_names, user_preference)
+                names = generate_function(num_names, user_preference, seed_value)
                 if isinstance(names, pd.DataFrame):
                     print(names.to_string(index=False))
                 else:
