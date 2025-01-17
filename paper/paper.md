@@ -1,5 +1,5 @@
 ---
-title: 'IndiGen: A Python Package for Generating Culturally Diverse Indian Names'
+title: IndiGen: A Python Package for Generating Culturally Diverse Indian Names
 tags:
   - Python
   - rule-based algorithm
