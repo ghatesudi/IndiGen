@@ -48,20 +48,11 @@ state-specific datasets, and its modular architecture allows for easy adaptation
 
 # Statement of need
 
-IndiGen addresses a critical challenge in generating culturally accurate synthetic names, a necessity highlighted by Bonneau et al. (2015) and Narayanan & Joshi (2018). 
-Existing tools for generating Indian names often fail to account for the linguistic and cultural diversity across India’s regions, producing names that lack cultural 
-authenticity and contextual accuracy. IndiGen fills this gap by offering a highly customizable, scalable solution designed to reflect India’s diverse population.
-While existing tools such as the ‘Indian Name Generator’ by Gavali (2021), ‘Indian Names’ by Kumar (2013), and ‘Get Indian Name’ by Singh (2020) have contributed to 
-generating synthetic Indian names, they fall short in key areas such as customization, cultural nuance, and diversity. For instance, these tools often rely on 
-repetitive databases, fail to account for non-binary names, and lack region-specific customization necessary for applications like demographic studies, 
-AI simulations, or software testing.IndiGen overcomes these limitations by offering region-specific datasets that capture phonetic patterns and naming 
-conventions unique to each state. Users can specify parameters like name length, gender distribution, and phonetic characteristics, enabling the generation of 
-culturally rich, linguistically accurate names ideal for AI training, demographic studies, and cultural research. Moreover, IndiGen ensures privacy compliance 
-by generating synthetic names that maintain cultural fidelity, addressing privacy concerns in research and software testing, as highlighted by Roth & Wilson (2015).
-Additionally, IndiGen’s reproducibility through random seed generation and its seamless integration with pandas make it an ideal tool for diverse workflows, 
-from machine learning to software testing. Its ability to generate large, regionally specific datasets ensures both ethical alignment and practicality for creating 
-anonymous yet culturally realistic datasets. In conclusion, IndiGen is an indispensable tool for computational research and AI development, particularly in scenarios 
-that demand culturally sensitive, region-specific datasets.
+‘IndiGen’ addresses a critical challenge in generating culturally accurate synthetic names, a necessity highlighted by Christen and Pudjijono (2009) and Han et al. (2017). Existing tools for generating Indian names often fail to account for the linguistic and cultural diversity across India’s regions, producing names that lack cultural authenticity and contextual accuracy. ‘IndiGen’ fills this gap by offering a highly customizable, scalable solution designed to reflect India’s diverse population.
+While existing tools such as the ‘Indian Name Generator’ by Gavali (2021), ‘Indian Names’ by Kumar (2013), and ‘Get Indian Name’ by Singh (2020) have contributed to generating synthetic Indian names, they fall short in key areas such as customization, cultural nuance, and diversity. For instance, these tools often rely on repetitive databases, fail to account for non-binary names, and lack region-specific customization necessary for applications like demographic studies, AI simulations, or software testing.
+‘IndiGen’ overcomes these limitations by offering region-specific datasets that capture phonetic patterns and naming conventions unique to each state. Users can specify parameters like name length, gender distribution, and phonetic characteristics, enabling the generation of culturally rich, linguistically accurate names ideal for AI training, demographic studies, and cultural research. Moreover, ‘IndiGen’ ensures privacy compliance by generating synthetic names that maintain cultural fidelity, addressing privacy concerns in research and software testing, as highlighted by Myles et al. (2024).
+Additionally, IndiGen’s reproducibility through random seed generation and its seamless integration with pandas make it an ideal tool for diverse workflows, from machine learning to software testing. Its ability to generate large, regionally specific datasets ensures both ethical alignment and practicality for creating anonymous yet culturally realistic datasets. In conclusion, ‘IndiGen’ is an indispensable tool for computational research and AI development, particularly in scenarios that demand culturally sensitive, region-specific datasets.
+
 
 
 # Methodology
@@ -114,7 +105,7 @@ The package was tested on multiple datasets, producing synthetic names that accu
 
 # Challenges in Current Methodologies
 
-Current name generation tools often fail to account for the cultural specificity essential for generating names that align with regional identities, leading to inaccuracies in simulations and analyses that rely on demographic authenticity. Additionally, privacy regulations restrict the use of real names in software testing and research, highlighting the importance of synthetic alternatives. Additionally, the growing demand for high-quality, region-specific data for machine learning models highlights the dearth of insufficient datasets. This can impede the development of reliable models capable of performing effectively across diverse contexts. IndiGen addresses these challenges by a) ensures cultural accuracy through state-specific datasets, b) offers high customizability to meet diverse user requirements, and c) generates scalable, reproducible datasets for AI and ML applications, thereby improving model performance and equity.
+Current name generation tools often fail to account for the cultural specificity essential for generating names that align with regional identities, leading to inaccuracies in simulations and analyses that rely on demographic authenticity. Additionally, privacy regulations restrict the use of real names in software testing and research, highlighting the importance of synthetic alternatives (Christen et al., 2009, Emam et al., 2020). Additionally, the growing demand for high-quality, region-specific data for machine learning models highlights the dearth of insufficient datasets. This can impede the development of reliable models capable of performing effectively across diverse contexts. ‘IndiGen’ addresses these challenges by a) ensures cultural accuracy through state-specific datasets, b) offers high customizability to meet diverse user requirements, and c) generates scalable, reproducible datasets for AI and ML applications, thereby improving model performance and equity.
 
 # Scientific Impact
 
@@ -134,7 +125,7 @@ Future updates will include versioning details and community contribution opport
 
 Special thanks to all contributors and users who provided feedback and helped improve the project.
 Their input has been invaluable in making this tool robust and user-friendly.
-We also acknowledge the inspiration drawn from the work: Sharma, R. S. (2005). 
+We also acknowledge the inspiration drawn from the work: Sharma, D. D. (2005). 
 Panorama of Indian Anthroponomy: An Historical, Socio-cultural & Linguistic Analysis of Indian Personal Names. Mittal Publications.
 
 # Declaration of Competing Interest
@@ -143,11 +134,19 @@ The authors declare that they have no known competing financial interests or per
 
 # References
 
-Onkar Gavali. (2021). Indian Name Generator (Version 1.0.0) [Software]. GitHub. Available at: https://github.com/OnkarGavali/indian-name-generator.
-Kumar, A. (2013). Indian Names (Version 0.2) [Software]. GitHub. Available at: https://github.com/ByteBaker/indian-names.
+Christen, P., & Pudjijono, A. (2009). Accurate synthetic generation of realistic personal information. In Advances in Knowledge Discovery and Data Mining: 13th   Pacific-Asia Conference, PAKDD 2009 Bangkok, Thailand, April 27-30, 2009 Proceedings 13 (pp. 507-514). Springer Berlin Heidelberg. 
+
 Devesh Singh. (2020). Get Indian Name (Version 0.1.0) [Software]. PyPI. Available at: https://pypi.org/project/getindianname/.
-Sharma, R. S. (2005). Panorama of Indian Anthroponomy: An Historical, Socio-cultural & Linguistic Analysis of Indian Personal Names. Mittal Publications.
-Bonneau, C., Bonneau, G., & Karam, M. (2015). "Cultural-Specific Synthetic Data Generation: Challenges and Approaches." Journal of Artificial Societies and Social Simulation, 18(3), 23-37.
-Narayanan, M., & Joshi, V. (2018). "Phonetic Patterns and Linguistic Diversity in Indian Names: Implications for Computational Modeling." Computational Linguistics and Language Technologies, 24(1), 44-60.
-Roth, A. E., & Wilson, A. J. (2015). "Synthetic Data for Social Science Research: Ethical and Practical Considerations." Social Science Research, 55, 82-92.
+
+El Emam, K., Mosquera, L., & Hoptroff, R. (2020). Practical synthetic data generation: balancing privacy and the broad availability of data. O'Reilly Media. 
+
+Han, S., Hu, Y., Skiena, S., Coskun, B., Liu, M., Qin, H., & Perez, J. (2017, November): Generating look-alike names for security challenges. In Proceedings of the 10th ACM Workshop on Artificial Intelligence and Security (pp. 57-67).
+
+Kumar, A. (2013). Indian Names (Version 0.2) [Software]. GitHub. Available at: https://github.com/ByteBaker/indian-names.
+
+Myles, P., Mitchell, C., Redrup Hill, E., Foschini, L., & Wang, Z. (2024): High-fidelity synthetic patient data applications and privacy considerations. Journal of Data Protection & Privacy, 6(4), 344-354.
+
+Onkar Gavali. (2021). Indian Name Generator (Version 1.0.0) [Software]. GitHub. Available at: https://github.com/OnkarGavali/indian-name-generator.
+
+Sharma, D. D. (2005). Panorama of Indian Anthroponomy: An Historical, Socio-cultural & Linguistic Analysis of Indian Personal Names. Mittal Publications.
 
