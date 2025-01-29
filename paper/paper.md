@@ -32,7 +32,7 @@ affiliations:
  - name: Adithya M, Dhanush Ghate D ,Department of Computer Science and Engineering, NMAM Institute of Technology, NITTE deemed to be University, Nitte - 574110, India
    index: 3
 date: 17 January 2025
-
+bibliography: paper.bib
 # Summary
 
 ‘IndiGen’ is an open-source Python package designed to generate culturally and regionally authentic synthetic names, 
