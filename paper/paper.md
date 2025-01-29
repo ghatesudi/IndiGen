@@ -10,19 +10,19 @@ authors:
   - name: Sudeep D Ghate
     orcid: https://orcid.org/0000-0001-9996-3605
     corresponding: true
-    affiliation: "1, 2" # (Multiple affiliations must be quoted)
+    affiliation: "1, 2" 
   - name: Saishma H
     orcid: https://orcid.org/0009-0003-4454-3584
     equal-contrib: true
-    affiliation: "1" # (Multiple affiliations must be quoted)
+    affiliation: "1" 
   - name: Adithya M
     orcid: https://orcid.org/0009-0004-2073-8210
     equal-contrib: true
-    affiliation: "3" # (Multiple affiliations must be quoted)
+    affiliation: "3" 
   - name: Dhanush Ghate D
     orcid: https://orcid.org/0009-0004-9143-1267
     equal-contrib: true
-    affiliation: "3" # (Multiple affiliations must be quoted)      
+    affiliation: "3"     
  
 affiliations:
  - name: Sudeep D Ghate,Saishma H, Center for Bioinformatics, NITTE deemed to be University, Mangaluru 575018, India
