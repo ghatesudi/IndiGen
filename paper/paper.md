@@ -33,6 +33,8 @@ affiliations:
    index: 3
 date: 17 January 2025
 bibliography: paper.bib
+---
+
 # Summary
 
 ‘IndiGen’ is an open-source Python package designed to generate culturally and regionally authentic synthetic names, 
